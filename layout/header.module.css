@@ -45,11 +45,15 @@
             text-decoration: none;
         }
     }
+
+    .burger {
+        display: none;
+    }
+
+    /* .burger-menu */
 }
 
-.burger {
-    display: none;
-}
+
 
 a {
     font-weight: 400;
@@ -66,9 +70,9 @@ a:hover {
         .menu {
             display: none;
         }
-    }   
 
-    .burger {
-        display: flex;
-    }
+        .burger {
+            display: flex;
+        }
+    }   
 }

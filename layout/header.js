@@ -1,5 +1,6 @@
 import styles from './header.module.css'
 import logoURL from '../assets/images/logo.png'
+import { router } from '../app/router'
 
 const Header = () => {
     // Init
@@ -7,17 +8,23 @@ const Header = () => {
 
     // Use this function to add the event listeners. Use 'get()' first to append
     // this module's node to the DOM
-    const addEventListeners = () => {
+    const registerEventListeners = () => {
         node.addEventListener('click', e => {
-            handleClick(e.target, e.target.dataset.type)
+            handleClick(e)
         })
     }
+    
+    const handleClick = e => {
 
-    const handleClick = (target, type) => {
+        // some event handlers as object literals
         const execute = {
-            // some event handlers as obj literals
+            navigate: () => {
+                e.preventDefault()
+                router.navigate(e)
+            }
         }
 
+        const { type } = e.target.dataset
         if (type) execute[type]()
     }
 
@@ -30,8 +37,9 @@ const Header = () => {
             </div>
             <div class="${styles.nav}">
                 <ul class="${styles.menu}">
-                    <li class="${styles.item}"><a href="#">Home</a></li>
-                    <li class="${styles.item}"><a href="#">About Me</a></li>
+                    <li class="${styles.item}"><a href="/" data-type="navigate">Home</a></li>
+                    <li class="${styles.item}"><a href="/about" data-type="navigate">About Me</a></li>
+                    <li class="${styles.item}"><a href="/post" data-type="navigate">Post</a></li>
                 </ul>
                 <div class="${styles.burger}" id="div-burger">
                     <i class='bx bx-menu bx-lg'></i>
@@ -56,7 +64,7 @@ const Header = () => {
 
     return {
         get,
-        addEventListeners
+        registerEventListeners
     }
 
 }
