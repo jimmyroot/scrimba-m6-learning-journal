@@ -1,5 +1,6 @@
 import { home } from '../pages/home'
 import { post } from '../pages/post'
+import { myWork } from '../pages/mywork'
 import { about } from '../pages/about'
 
 const Router = () => {
@@ -14,8 +15,11 @@ const Router = () => {
             linkLabel: 'About',
             content: about.get()
         },
-        '/post': {
+        '/mywork': {
             linkLabel: 'Post',
+            content: myWork.get()
+        },
+        '/post': {
             content: ``
         },
         '/unknown': {

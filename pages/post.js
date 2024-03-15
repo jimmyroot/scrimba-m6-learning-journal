@@ -4,6 +4,23 @@ const Post = () => {
 
     const selectedPostId = ``
 
+    const registerEventListeners = () => {
+        node.addEventListener('click', e => {
+            handleClick(e)
+        })
+    }
+
+    const handleClick = e => {
+        const execute = {
+            back: () => {
+                e.preventDefault()
+                window.history.go(-1)
+            }
+        }
+
+        const { type } = e.target.dataset
+        if (type) execute[type]()
+    }
     const render = postId => {
 
         const post = posts.find(post => post.id === +postId)
@@ -12,7 +29,8 @@ const Post = () => {
         
         let html = `
             <h1>${title}</h1>
-            <p>${content}
+            <p>${content}</p>
+            <a href="" data-type="back">Back</a>
         `
 
         return html
@@ -38,6 +56,7 @@ const Post = () => {
     }
 
     const node = document.createElement('div')
+    registerEventListeners()
 
     return {
         get,

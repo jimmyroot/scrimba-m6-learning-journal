@@ -39,7 +39,7 @@ const Header = () => {
                 <ul class="${styles.menu}">
                     <li class="${styles.item}"><a href="/" data-type="navigate">Home</a></li>
                     <li class="${styles.item}"><a href="/about" data-type="navigate">About Me</a></li>
-                    <li class="${styles.item}"><a href="/post" data-type="navigate">Post</a></li>
+                    <li class="${styles.item}"><a href="/mywork" data-type="navigate">My Work</a></li>
                 </ul>
                 <div class="${styles.burger}" id="div-burger">
                     <i class='bx bx-menu bx-lg'></i>
