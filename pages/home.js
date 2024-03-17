@@ -30,8 +30,10 @@ const Home = () => {
 
     const render = () => {
         let html = `
+        <section class=${styles.posts}>
             ${renderFeaturedPost(featuredPostId)}
             ${renderRecentPosts(3)}
+        </section>
         `
         return html
     }
