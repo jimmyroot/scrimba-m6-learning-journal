@@ -13,4 +13,8 @@ import { router } from './app/router'
     router.registerRouterWithBrowserNavigation()
 })()
 
-// TODO 1: Break down the styling tasks
+// TODO 1: View more button
+// Style about and content
+// Style my work and content (just some screenshots of my projects)
+// Burger menu implementation (header.js, maybe we break out nav into it's own .js component
+// 

@@ -21,7 +21,14 @@ const Header = () => {
             navigate: () => {
                 e.preventDefault()
                 router.navigate(e)
+            },
+            menuShow: () => {
+                document.querySelector(`#nav`).classList.remove(`${styles.hidden}`)
+            },
+            menuHide: () => {
+                document.querySelector(`#nav`).classList.add(`${styles.hidden}`)
             }
+            
         }
 
         const { type } = e.target.dataset
@@ -32,18 +39,22 @@ const Header = () => {
     const render = () => {
         let html = `
             <div class="${styles.logo}">
-                <img class="${styles.img}" src="${logoURL}">
-                <h1 class="${styles.title}">My Learning Journal</h1>
+                <img src="${logoURL}">
+                <h1>My learning journal</h1>
             </div>
             <div class="${styles.nav}">
-                <ul class="${styles.menu}">
+                <ul class="${styles.menu} ${styles.hidden}" id="nav">
                     <li class="${styles.item}"><a href="/" data-type="navigate">Home</a></li>
                     <li class="${styles.item}"><a href="/about" data-type="navigate">About Me</a></li>
                     <li class="${styles.item}"><a href="/mywork" data-type="navigate">My Work</a></li>
+                    <button class="${styles.close}" data-type="menuHide">
+                        <i class='bx bx-x bx-lg'></i>
+                    </button>
                 </ul>
-                <div class="${styles.burger}" id="div-burger">
+                
+                <button class="${styles.burger}" id="div-burger" data-type="menuShow">
                     <i class='bx bx-menu bx-lg'></i>
-                </div>
+                </button>
             </div>
         `
         return html
