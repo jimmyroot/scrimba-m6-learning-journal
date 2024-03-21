@@ -1,13 +1,35 @@
 .header {
     background-color: var(--primary);
     width: 100%;
-    min-width: 418px;
+    height: 60px;
+    /* min-width: 418px;
     height: 60px;
     display: grid;
     grid-template-columns: 1em 1.3fr 0.7fr 1em;
     grid-template-areas:
         ". logo menu ."
-    ;
+    ; */
+}
+
+.container {
+    max-width: 1280px;
+    min-width: 418px;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1em 1.3fr 0.7fr 1em;
+    grid-template-areas:
+        ". logo menu .";
+    margin: 0 auto;
+}
+
+.test {
+    background-color: var(--tertiary);
+    position: absolute;
+    z-index: 0;
+    width: 100dvw;
+    height: 480px;
+    top: 60px;
+    left: 0;
 }
 
 .logo {
@@ -96,10 +118,6 @@
         }
     }
 
-    .hidden {
-        display: none;
-    }
-
     .burger {
         display: flex;
         border: none;
@@ -111,6 +129,10 @@
         }
     }
 
+    .hidden {
+        display: none;
+    }
+
     /* NAV MEDIA QUERIES */
     @media (max-width: 480px) {
         & {
@@ -120,7 +142,7 @@
 
             li a {
                 font-size: 5rem;
-            }
+            }   
         }
     }
 
@@ -174,4 +196,3 @@ a {
 a:hover {
     text-decoration: underline;
 }
-

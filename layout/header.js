@@ -21,14 +21,14 @@ const Header = () => {
             navigate: () => {
                 e.preventDefault()
                 router.navigate(e)
+                navHide()
             },
-            menuShow: () => {
-                document.querySelector(`#nav`).classList.remove(`${styles.hidden}`)
+            show: () => {
+                navShow()
             },
-            menuHide: () => {
-                document.querySelector(`#nav`).classList.add(`${styles.hidden}`)
+            hide: () => {
+                navHide()
             }
-            
         }
 
         const { type } = e.target.dataset
@@ -38,30 +38,41 @@ const Header = () => {
     // Render functions
     const render = () => {
         let html = `
-            <div class="${styles.logo}">
-                <img src="${logoURL}">
-                <h1>My learning journal</h1>
-            </div>
-            <div class="${styles.nav}">
-                <ul class="${styles.menu} ${styles.hidden}" id="nav">
-                    <li class="${styles.item}"><a href="/" data-type="navigate">Home</a></li>
-                    <li class="${styles.item}"><a href="/about" data-type="navigate">About Me</a></li>
-                    <li class="${styles.item}"><a href="/mywork" data-type="navigate">My Work</a></li>
-                    <button class="${styles.close}" data-type="menuHide">
-                        <i class='bx bx-x bx-lg'></i>
+            <div class="${styles.container}">
+                <div class="${styles.logo}">
+                    <img src="${logoURL}">
+                    <h1>My learning journal</h1>
+                </div>
+                <div class="${styles.nav}">
+                    <ul class="${styles.menu} ${styles.hidden}" id="nav">
+                        <li class="${styles.item}"><a href="/" data-type="navigate">Home</a></li>
+                        <li class="${styles.item}"><a href="/about" data-type="navigate">About Me</a></li>
+                        <li class="${styles.item}"><a href="/mywork" data-type="navigate">My Work</a></li>
+                        <button class="${styles.close}" data-type="hide">
+                            <i class='bx bx-x bx-lg'></i>
+                        </button>
+                    </ul>
+                    
+                    <button class="${styles.burger}" id="div-burger" data-type="show">
+                        <i class='bx bx-menu bx-lg'></i>
                     </button>
-                </ul>
-                
-                <button class="${styles.burger}" id="div-burger" data-type="menuShow">
-                    <i class='bx bx-menu bx-lg'></i>
-                </button>
-            </div>
+                </div>
+            <div>
+        
         `
         return html
     }
 
     const refresh = () => {
         node.innerHTML = render()
+    }
+
+    const navShow = () => {
+        document.querySelector(`#nav`).classList.remove(`${styles.hidden}`)
+    }
+
+    const navHide = ()  => {
+        document.querySelector(`#nav`).classList.add(`${styles.hidden}`)
     }
     
     const get = () => {

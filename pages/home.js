@@ -49,6 +49,7 @@ const Home = () => {
     
 
         let html = `
+        
             <section class=${styles.posts}>
                 ${renderFeaturedPost(featuredPostId)}
                 ${posts}
