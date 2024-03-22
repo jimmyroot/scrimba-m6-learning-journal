@@ -1,4 +1,5 @@
 import { posts } from '../app/data'
+import styles from './post.module.css'
 
 const Post = () => {
 
@@ -25,11 +26,14 @@ const Post = () => {
 
         const post = posts.find(post => post.id === +postId)
 
-        const { title, content } = post
+        const { id, author, title, path, imgURL, imgAltTxt, date, intro, content } = post
         
         let html = `
+            <p>${date} by ${author}</p>
             <h1>${title}</h1>
-            <p>${content}</p>
+            <p>${intro}</p>
+            <img src="${imgURL}" alt="${imgAltTxt}">
+            <p>${content}
             <a href="" data-type="back">Back</a>
         `
 
@@ -56,6 +60,7 @@ const Post = () => {
     }
 
     const node = document.createElement('div')
+    node.className += styles.post
     registerEventListeners()
 
     return {

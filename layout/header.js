@@ -52,13 +52,12 @@ const Header = () => {
                             <i class='bx bx-x bx-lg'></i>
                         </button>
                     </ul>
-                    
                     <button class="${styles.burger}" id="div-burger" data-type="show">
                         <i class='bx bx-menu bx-lg'></i>
                     </button>
                 </div>
             <div>
-        
+            <div class="${styles.bg}"></div>
         `
         return html
     }
