@@ -13,8 +13,6 @@ import { router } from './app/router'
     router.registerRouterWithBrowserNavigation()
 })()
 
-// TODO 1: View more button
-// Style about and content
+// TODO 1: Fix burger stay open if dragging window when it's already open
+// Style abou
 // Style my work and content (just some screenshots of my projects)
-// Burger menu implementation (header.js, maybe we break out nav into it's own .js component
-// 

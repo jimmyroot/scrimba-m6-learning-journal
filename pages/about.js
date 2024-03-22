@@ -1,8 +1,10 @@
+import styles from './about.module.css'
+
 const About = () => {
 
     const render = () => {
         let html = `
-            <h1>About page</h1>
+            <h1><span>About page</span></h1>
         `
 
         return html
@@ -18,6 +20,7 @@ const About = () => {
     }
 
     const node = document.createElement('div')
+    node.className += styles.container
 
     return {
         get

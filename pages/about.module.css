@@ -1,0 +1,20 @@
+.container {
+    composes: container from '../css/styles.css';
+    /* background-color: aqua; */
+
+    h1 {
+        /* grid-area: title; */
+        line-height: 1.2em;
+        margin-left: 0.3em;
+
+        span {
+            background-color: var(--accent);
+            color: white;
+            display: inline;
+            box-decoration-break: clone;
+            -webkit-box-decoration-break: clone;
+            box-shadow: 10px 0 0 var(--accent), -10px 0 0 var(--accent);
+        }
+    }
+}
+

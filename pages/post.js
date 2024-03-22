@@ -1,4 +1,5 @@
 import { posts } from '../app/data'
+import * as helper from '../app/helper'
 import styles from './post.module.css'
 
 const Post = () => {
@@ -29,14 +30,16 @@ const Post = () => {
         const { id, author, title, path, imgURL, imgAltTxt, date, intro, content } = post
         
         let html = `
-            <p>${date} by ${author}</p>
-            <h1>${title}</h1>
-            <p>${intro}</p>
+            <p class="${styles.date}">${helper.dateFormatted(date)} by <span><a href="/about">${author}</a><span></p>
+            <h1><span>${title}</span></h1>
+            <p class="${styles.intro}">${intro}</p>
             <img src="${imgURL}" alt="${imgAltTxt}">
-            <p>${content}
-            <a href="" data-type="back">Back</a>
+            <div class="${styles.content}">
+                ${content}
+            </div>
+            <a href="#" class="${styles.back}" data-type="back">Back</a>
         `
-
+ 
         return html
     }
 

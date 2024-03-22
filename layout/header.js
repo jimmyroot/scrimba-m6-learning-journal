@@ -56,8 +56,9 @@ const Header = () => {
                         <i class='bx bx-menu bx-lg'></i>
                     </button>
                 </div>
+                <div class="${styles.bg}"></div>
             <div>
-            <div class="${styles.bg}"></div>
+            
         `
         return html
     }
