@@ -17,7 +17,7 @@ const Home = () => {
         window.matchMedia('(min-width: 640px)').addEventListener('change', () => {
             refresh()
         })
-        window.matchMedia('(min-width: 1214px').addEventListener('change', () => {
+        window.matchMedia('(min-width: 1024px').addEventListener('change', () => {
             refresh()
         })
     }

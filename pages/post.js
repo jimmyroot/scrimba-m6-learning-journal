@@ -52,8 +52,7 @@ const Post = () => {
     const getRecentPosts = (numPostsToRender = posts.length, exceptPostId = null, showHeader = false) => {
         const postsToRender = posts.filter(post => post.id != exceptPostId)
 
-        let html = showHeader ? `` : ``
-        
+        let html = showHeader ? `<h2 class="${styles.heading}">Recent Posts</h2><div class="${styles.recentPostsContainer}">` : `<div class="${styles.recentPostsContainer}">`
 
         html += postsToRender.map((post, index, array) => {
             const { id, author, title, path, imgURL, imgAltTxt, date, intro } = post
@@ -69,7 +68,7 @@ const Post = () => {
                     </div>
                 `
             }
-        }).join('')
+        }).join('').concat('</div>')
 
         const recentPosts = new DOMParser().parseFromString(html, 'text/html').body.children
 

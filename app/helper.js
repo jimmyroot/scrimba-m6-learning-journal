@@ -18,7 +18,7 @@ const dateFormatted = date => {
 const getRenderSize = width => {
     if (width <= 640) {
         return 'small'
-    } else if (width <= 1214) {
+    } else if (width <= 1024) {
         return 'medium'
     } else {
         return 'large'

@@ -79,8 +79,8 @@ const Router = () => {
 
             // if post was retrieved successfully, append recent posts 
             if (html) {
-                const recentPosts = post.getRecentPosts(3, null, true)
-                routes['/post'].content = [html, recentPosts]
+                const recentPostsSection = post.getRecentPosts(3, null, true)
+                routes['/post'].content = [html, recentPostsSection]
             }
 
             // If the post was returned successfully, set route to post, else if it's 'false' set route to
