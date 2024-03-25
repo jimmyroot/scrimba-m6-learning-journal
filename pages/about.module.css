@@ -1,11 +1,20 @@
 .container {
     composes: container from '../css/styles.css';
-    /* background-color: aqua; */
+    margin-top: 3.5em;
+
+    display: grid;
+    grid-template-columns: 0 1fr 0;
+    column-gap: 1.5em;
+    grid-template-areas:
+        '. avatar .'
+        '. title .'
+        '. content .'
+        '. back .';
 
     h1 {
-        /* grid-area: title; */
+        grid-area: title;
         line-height: 1.2em;
-        margin-left: 0.3em;
+        margin: 1.5em 0 0.5em 0.3em;
 
         span {
             background-color: var(--accent);
@@ -16,5 +25,71 @@
             box-shadow: 10px 0 0 var(--accent), -10px 0 0 var(--accent);
         }
     }
-}
 
+    h2 {
+        font-size: 1rem;
+        margin: 0.7em auto;
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--secondary);
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .avatar {
+        grid-area: avatar;
+        width: 200px;
+        border-radius: 50%;
+    }
+
+    .content {
+        grid-area: content;
+    }
+
+    .back {
+        grid-area: back;
+        justify-self: center;
+        padding: 0 0.5em;
+        margin: 2em 0;
+        text-transform: uppercase;
+        letter-spacing: 1.3;
+        font-size: 0.9rem;
+        font-weight: 400;
+        line-height: 1.5;
+        .back {
+        grid-area: back;
+        justify-self: center;
+        padding: 0 0.5em;
+        margin: 2em 0;
+        text-transform: uppercase;
+        letter-spacing: 1.3;
+        font-size: 0.9rem;
+        font-weight: 400;
+        line-height: 1.5;
+
+        &:hover {
+            background-color: var(--secondary);
+            text-decoration: none;
+            color: var(--primary);
+        }
+
+        &:active {
+            background-color: var(--accent);
+        }
+    }
+
+        &:hover {
+            background-color: var(--secondary);
+            text-decoration: none;
+            color: var(--primary);
+        }
+
+        &:active {
+            background-color: var(--accent);
+        }
+    }
+}

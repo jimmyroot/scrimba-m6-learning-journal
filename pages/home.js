@@ -2,12 +2,12 @@ import styles from './home.module.css'
 import { router } from '../app/router'
 import { posts } from '../app/data'
 import * as helper from '../app/helper'
+import { post } from './post'
 
 const Home = () => {
 
     // Init
     const featuredPostId = 1
-    const numberOfPosts = posts.length
     let viewMore = false
 
     const registerEventListeners = () => {
@@ -44,34 +44,23 @@ const Home = () => {
     }
 
     const render = () => {
+        const featuredPost = renderFeaturedPost(featuredPostId)
+        const recentPosts = viewMore ?
+            post.getRecentPosts(6, featuredPostId, false) :
+            post.getRecentPosts(numberOfPostsToRender, featuredPostId, false)
+        const btnViewMore = renderViewMoreBtn()
 
-        const posts = viewMore ? renderRecentPosts(6) : renderRecentPosts(numberOfPostsToRender)
-    
-
-        let html = `
-        
-            <section class=${styles.posts}>
-                ${renderFeaturedPost(featuredPostId)}
-                ${posts}
-            </section>
-        `
-
-        html += `
-            <button class="${styles.viewMore}" data-type="more">
-                ${viewMore ? 'View Less' : 'View More'}
-            </button>
-        `
-
-        return html
+        return [featuredPost, recentPosts, btnViewMore]
     }
 
     const renderFeaturedPost = postId => {
 
         const featuredPost = posts.find(post => post.id === postId)
         const { id, author, title, path, imgURL, imgAltTxt, date, intro } = featuredPost
-      
-        let html = `
-            <div class="${styles.featured}">
+        const el = document.createElement('section')
+
+        el.classList.add(styles.featured)
+        el.innerHTML = `
             <img src="${imgURL}" alt="${imgAltTxt}">
             <div>
                 <p class="${styles.date}">${helper.dateFormatted(date)} by 
@@ -84,32 +73,18 @@ const Home = () => {
                 </a>
                 <p>${intro}</p>
             </div>
-            </div>
         `
-        return html
+
+        return el
     }
 
-    // Default to all posts unless we specify a number
-    const renderRecentPosts = (numPostsToRender = numberOfPosts) => {
-        const postsWithoutFeatured = posts.filter(post => post.id != featuredPostId)
-    
-        const html = postsWithoutFeatured.map((post, index, array) => {
-            const { id, author, title, path, imgURL, imgAltTxt, date, intro } = post
-            if ((index) < numPostsToRender) {
-                return `
-                    <div class="${styles.post}">
-                        <img src="${imgURL}" alt="${imgAltTxt}">
-                        <p class="${styles.date}">${helper.dateFormatted(date)} by ${author}</p>
-                        <a href="${path}" data-type="navigateToPost" data-id="${id}">
-                            <h2>${title}</h2>
-                        </a>
-                        <p>${intro}</p>
-                    </div>
-                `
-            }
-        }).join('')
+    const renderViewMoreBtn = () => {
+        const btn = document.createElement('button')
+        btn.classList.add(styles.viewMore)
+        btn.dataset.type = 'more'
+        btn.textContent = viewMore ? 'View Less' : 'View More'
 
-        return html
+        return btn
     }
 
     const getNumberOfPostsToRender = () => {
@@ -124,14 +99,14 @@ const Home = () => {
                 return 6
             }
         }
+        
         const renderSize = helper.getRenderSize(window.innerWidth)
         return getNumberOfPostsFor[renderSize]()
     }
 
-
     const refresh = () => {
         numberOfPostsToRender = getNumberOfPostsToRender()
-        node.innerHTML = render()
+        node.replaceChildren(...render())
     }
 
     const get = () => {
@@ -142,6 +117,7 @@ const Home = () => {
 
     // Initialization stuff
     const node = document.createElement('div')
+    node.classList.add(styles.home)
     let numberOfPostsToRender = getNumberOfPostsToRender()
 
     return {
