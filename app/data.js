@@ -5,6 +5,7 @@ import blogFourImageURL from '../assets/images/blogimg.jpg'
 import blogFiveImageURL from '../assets/images/blogimg.jpg'
 import blogSixImageURL from '../assets/images/blogimg.jpg'
 import blogSevenImageURL from '../assets/images/blogimg.jpg'
+import imgUrlRestaurantApp from '../assets/images/blogimg.jpg'
 
 export const posts = [
     {
@@ -44,10 +45,10 @@ export const posts = [
     {
         id: 2,
         author: 'Jimmy',
-        title: 'Blog Two',
-        path: `/blog-two`,
+        title: 'A simple way to format code blocks with CSS',
+        path: `/a-simple-way-to-format-code-blocks-with-css`,
         imgURL: blogTwoImageURL,
-        imgAltTxt: 'Some descriptive text',
+        imgAltTxt: 'Some alt text',
         date: new Date(2024, 2, 9),
         intro: `
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
@@ -181,3 +182,45 @@ export const posts = [
     },
 ]
 
+export const portfolio = [
+    {
+        title: `'Cool Beans' - Restaurant Ordering App`,
+        description: `A mockup of a restaurant ordering app`,
+        stack: [
+            'HTML',
+            'CSS',
+            'JavaScript'
+        ],
+        imgURL: imgUrlRestaurantApp
+    },
+    {
+        title: `'Cool Beans' - Restaurant Ordering App`,
+        description: `A mockup of a restaurant ordering app`,
+        stack: [
+            'HTML',
+            'CSS',
+            'JavaScript'
+        ],
+        imgURL: imgUrlRestaurantApp
+    },
+    // {
+    //     title: `'Cool Beans' - Restaurant Ordering App`,
+    //     description: `A mockup of a restaurant ordering app`,
+    //     stack: [
+    //         'HTML',
+    //         'CSS',
+    //         'JavaScript'
+    //     ],
+    //     imgURL: ''
+    // }
+    // {
+    //     title: `'Cool Beans' - Restaurant Ordering App`,
+    //     description: `A mockup of a restaurant ordering app`,
+    //     stack: [
+    //         'HTML',
+    //         'CSS',
+    //         'JavaScript'
+    //     ],
+    //     imgURL: ''
+    // }
+]

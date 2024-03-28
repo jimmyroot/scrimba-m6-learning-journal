@@ -20,15 +20,15 @@
 
     h2 {
         font-size: 1rem;
-        margin: 0.7em auto;
+        margin: 1em 0 0.7em 0;
     }
 
     img {
         width: 100%;
-        margin: 0.5em auto;
         max-height: 480px;
         object-fit: cover;
         padding: 0 1em;
+        margin: 1em 0 1em 0;
     }
 
     .date {
@@ -82,33 +82,43 @@
  
     @media (min-width: 640px) {
         & {
-            /* padding-top: 2em; */
-            column-gap: 2em;
-            grid-template-columns: 0 0 1fr 0 0;
-            grid-template-areas:
-                '. . date . .'
-                '. . title . .'
-                '. . intro . .'
-                '. img img img .'
-                '. . content . .'
-                '. . back . .';
             
-            h1 { 
+            h1 {
+                font-size: 3rem;
                 width: 80%;
                 margin-left: 0;
             }
 
             img {
+                align-self: center;
                 max-height: 480px;
+                padding: 0 2.5em;
+            }
+
+            .postInner {
+                padding: 0 5em;
+            }
+
+            p {
+                /* background-color: pink; */
+                font-size: 1.2rem;
             }
         }
     }
 
     @media (min-width: 1280px) {
         & {
-            column-gap: 4em;
             h1 {
                 width: 100%;
+            }
+
+            img {
+                padding: 0 3.5em;
+            }
+            
+            .postInner {
+                padding: 0 6em;
+
             }
         }
     }
@@ -128,7 +138,7 @@
     .recentPostsContainer {
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
     }
 
     @media (min-width: 640px) {

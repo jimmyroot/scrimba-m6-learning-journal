@@ -57,6 +57,10 @@ const Router = () => {
         const route = `/post${e.target.pathname}`
         history.pushState({}, "", route)
         render(route)
+        window.scrollTo({
+            top: 0,
+            behaviour: 'smooth'
+        })
     }
 
     const render = route => {
@@ -79,7 +83,7 @@ const Router = () => {
 
             // if post was retrieved successfully, append recent posts 
             if (html) {
-                const recentPostsSection = post.getRecentPosts(3, null, true)
+                const recentPostsSection = post.getRecentPosts(3, post.getRenderedPostId(), true)
                 routes['/post'].content = [html, recentPostsSection]
             }
 

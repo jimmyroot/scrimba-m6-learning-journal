@@ -9,7 +9,6 @@
 
 *, *::before, *::after {
     box-sizing: inherit;
-    /* border: 1px solid red; */
 }
 
 html, body {
@@ -50,3 +49,7 @@ button > * {
     min-width: 418px;
     margin: 0 auto;
 }
+
+/* body * {
+    border: 1px solid red;
+} */

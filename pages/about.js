@@ -23,13 +23,15 @@ const About = () => {
 
     const render = () => {
         let html = `
-            <img class="${styles.avatar}" src="${avatarURL}" alt="A picture, a headshot of Jimmy, in a cartoon style.">
-            <h1>
-                <span>
-                    Hi there! My name is Jimmy and welcome to my leaning journal.
-                </span>
-            </h1>
-            <div class="${styles.content}">
+            <header>
+                <img class="${styles.avatar}" src="${avatarURL}" alt="A picture, a headshot of Jimmy, in a cartoon style.">
+                <h1>
+                    <span>
+                        Hi there! My name is Jimmy and welcome to my learning journal.
+                    </span>
+                </h1>
+            </header>
+            <section>
                 <p>
                     After several months of learning in the Frontend Developer Career Path, I've made the big jump over 
                     to the Bootcamp to get expert code reviews of my Solo Projects projects and meet like-minded peers.
@@ -52,9 +54,10 @@ const About = () => {
                 <p>
                     That helped me grok what I was learning, and I realized that posting my learning summaries was also helping others learn and stay motivated.
                 </p>
-            </div>
+            </section>
             <a href="#" class="${styles.back}" data-type="back">Back</a>
         `
+        // Not sure the back button should stay here, maybe have it importable as a module?
 
         return html
     }
@@ -68,8 +71,8 @@ const About = () => {
         return node
     }
 
-    const node = document.createElement('div')
-    node.className += styles.container
+    const node = document.createElement('article')
+    node.className += styles.about
     registerEventListeners()
 
     return {

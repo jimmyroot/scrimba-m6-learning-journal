@@ -1,10 +1,11 @@
 import { posts } from '../app/data'
+import { router } from '../app/router.js'
 import * as helper from '../app/helper'
 import styles from './post.module.css'
 
 const Post = () => {
 
-    const selectedPostId = ``
+    let renderedPostId = null
 
     const registerEventListeners = () => {
         node.addEventListener('click', e => {
@@ -17,6 +18,12 @@ const Post = () => {
             back: () => {
                 e.preventDefault()
                 window.history.go(-1)
+            },
+            navigateToPost: () => {
+                // console.log('fired')
+                // console.log(e.target.href)
+                e.preventDefault()
+                router.navigateToPost(e, e.target.dataset.id)
             }
         }
 
@@ -30,11 +37,13 @@ const Post = () => {
 
         const { id, author, title, path, imgURL, imgAltTxt, date, intro, content } = post
         
+        renderedPostId = id
+
         let html = `
             <div class="${styles.postInner}">
                 <p class="${styles.date}">${helper.dateFormatted(date)} by <span><a href="/about">${author}</a><span></p>
                 <h1><span>${title}</span></h1>
-                <p class="${styles.intro}">${intro}</p>
+                <p>${intro}</p>
             </div>
             <img src="${imgURL}" alt="${imgAltTxt}">
             <div class="${styles.postInner}">
@@ -75,12 +84,12 @@ const Post = () => {
         const recentPostsSection = document.createElement('section')
         recentPostsSection.classList.add(styles.recentPosts)
         recentPostsSection.append(...recentPosts)
+
+        recentPostsSection.addEventListener('click', e => {
+            handleClick(e)
+        })
         
         return recentPostsSection
-    }
-
-    const refresh = postId => {
-        node.innerHTML = render(postId)
     }
 
     const getPostByPath = path => {
@@ -93,6 +102,15 @@ const Post = () => {
         }
     }
 
+    const getRenderedPostId = () => {
+        return renderedPostId
+    }
+
+    const refresh = postId => {
+        node.innerHTML = render(postId)
+        registerEventListeners()
+    }
+
     const get = postId => {
         refresh(postId)
         return node
@@ -100,12 +118,12 @@ const Post = () => {
 
     const node = document.createElement('div')
     node.className += styles.post
-    registerEventListeners()
-
+    
     return {
         get,
         getPostByPath,
-        getRecentPosts
+        getRecentPosts,
+        getRenderedPostId
     }
 }
 
