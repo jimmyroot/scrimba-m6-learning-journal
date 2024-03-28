@@ -11,13 +11,13 @@
     min-height: 100px;
     background-color: pink;
 
-    .description {
+    .descriptionContainer {
         min-height: inherit;
         width: 100%;
         background-color: blue;
     }
 
-    .image {
+    .imageContainer {
         min-height: inherit;
         width: 100%;
         background-color: green;
@@ -30,7 +30,7 @@
                 width: 30%;
             }
 
-            .image {
+            .imageContainer {
                 width: 70%;
             }
         }
@@ -41,17 +41,10 @@
             flex-direction: row-reverse;
         }
 
+        .imageContainer {
+            img {
+                width: 100%;
+            }
+        }
     }
 }
-
-/* .project:nth-child(even) {
-    flex-direction: column;
-
-    @media(min-width: 640px) {
-        flex-direction: row;
-    }
-
-    @media(min-width: 1024px) {
-        flex-direction: row-reverse;
-    }
-} */

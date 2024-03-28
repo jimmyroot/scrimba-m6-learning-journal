@@ -13,17 +13,18 @@ const MyWork = () => {
 
     const renderPortfolio = () => {
         return portfolio.map(project => {
-            const { title, description, imgUrl } = project
+            const { title, description, imgURL } = project
     
             return `
                 <div class="${styles.project}">
-                    <div class="${styles.description}">
+                    <div class="${styles.descriptionContainer}">
                         <h2>${title}</h2>
                         <p>${description}</p>
                     </div>
-                    <div class="${styles.image}">
-                        <img src="${imgUrl}">
+                    <div class="${styles.imageContainer}">
+                        <img src="${imgURL}">
                     </div>
+                    
                 </div>
             `
         })
