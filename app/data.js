@@ -5,7 +5,11 @@ import blogFourImageURL from '../assets/images/blogimg.jpg'
 import blogFiveImageURL from '../assets/images/blogimg.jpg'
 import blogSixImageURL from '../assets/images/blogimg.jpg'
 import blogSevenImageURL from '../assets/images/blogimg.jpg'
-import imgUrlRestaurantApp from '../assets/images/blogimg.jpg'
+import imgUrlRestaurantApp from '../assets/images/coolbeans.png'
+import imgUrlInvoiceCreator from '../assets/images/invoicecreator.png'
+import imgUrlChoreslist from '../assets/images/choreslist.png'
+import imgUrlBestBank from '../assets/images/bestbank.png'
+import imgUrlUnitConverter from '../assets/images/unitconverter.png'
 
 export const posts = [
     {
@@ -184,43 +188,105 @@ export const posts = [
 
 export const portfolio = [
     {
-        title: `'Cool Beans' - Restaurant Ordering App`,
-        description: `A mockup of a restaurant ordering app`,
+        title: `Cool Beans`,
+        subtitle: `An online ordering service app mockup`,
+        description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+        nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Duis aute irure dolor in
+        reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+        nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+        sunt in culpa qui officia deserunt mollit anim id est laborum.</p>`,
         stack: [
             'HTML',
             'CSS',
             'JavaScript'
         ],
+        url: 'https://comforting-malasada-3f39d8.netlify.app/',
         imgURL: imgUrlRestaurantApp
     },
     {
-        title: `'Cool Beans' - Restaurant Ordering App`,
-        description: `A mockup of a restaurant ordering app`,
+        title: `Invoice Creator`,
+        subtitle: `A mockup of an app for creating and sending invoices`,
+        description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+        reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+        nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+        sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+        nisi ut aliquip ex ea commodo consequat.</p>`,
         stack: [
             'HTML',
             'CSS',
             'JavaScript'
         ],
-        imgURL: imgUrlRestaurantApp
+        imgURL: imgUrlInvoiceCreator
     },
-    // {
-    //     title: `'Cool Beans' - Restaurant Ordering App`,
-    //     description: `A mockup of a restaurant ordering app`,
-    //     stack: [
-    //         'HTML',
-    //         'CSS',
-    //         'JavaScript'
-    //     ],
-    //     imgURL: ''
-    // }
-    // {
-    //     title: `'Cool Beans' - Restaurant Ordering App`,
-    //     description: `A mockup of a restaurant ordering app`,
-    //     stack: [
-    //         'HTML',
-    //         'CSS',
-    //         'JavaScript'
-    //     ],
-    //     imgURL: ''
-    // }
+    {
+        title: `Choreslist`,
+        subtitle: `A simple to-do list app`,
+        description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+        reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+        nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+        sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+        nisi ut aliquip ex ea commodo consequat.</p>`,
+        stack: [
+            'HTML',
+            'CSS',
+            'JavaScript'
+        ],
+        imgURL: imgUrlChoreslist
+    },
+    {
+        title: `BestBank`,
+        subtitle: `A mockup for a fictitious online bank`,
+        description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+        reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+        nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+        sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+        nisi ut aliquip ex ea commodo consequat.</p>`,
+        stack: [
+            'HTML',
+            'CSS',
+        ],
+        imgURL: imgUrlBestBank
+    },
+    {
+        title: `Unit Converter`,
+        subtitle: `A simple unit converter app`,
+        description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+        reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+        nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+        sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+        nisi ut aliquip ex ea commodo consequat.</p>`,
+        stack: [
+            'HTML',
+            'CSS',
+            'JavaScript'
+        ],
+        imgURL: imgUrlUnitConverter
+    }
 ]

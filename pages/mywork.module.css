@@ -1,5 +1,23 @@
 .mywork {
     composes: container from '../css/styles.css';
+
+    header {
+
+        h1 {
+            line-height: 1.2em;
+            display: block;
+            margin: 1em 0 0.5em 0.3em;
+    
+            span {
+                background-color: var(--accent);
+                color: white;
+                display: inline;
+                box-decoration-break: clone;
+                -webkit-box-decoration-break: clone;
+                box-shadow: 10px 0 0 var(--accent), -10px 0 0 var(--accent);
+            }
+        }
+    }
 }
 
 .project {
@@ -7,43 +25,100 @@
     flex-direction: column;
     gap: 1em;
     margin-bottom: 1em;
-    width: 100%;
-    min-height: 100px;
-    background-color: pink;
 
     .descriptionContainer {
         min-height: inherit;
-        width: 100%;
-        background-color: blue;
+        padding: 0 2em;
+
+        h2 {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        p {
+            margin: 0.5em 0;
+        }
+
+        .stack {
+            margin-top: 0.8em;
+            display: flex;
+            gap: 0.8em;
+
+            div {
+                background-color: var(--accent);
+                color: var(--primary);
+                letter-spacing: .05em;
+                font-weight: 600;
+                text-transform: uppercase;
+                padding: .2em .5em;
+            }
+        }
     }
 
     .imageContainer {
         min-height: inherit;
-        width: 100%;
-        background-color: green;
+
+        img {
+            aspect-ratio: 1/1;
+            display: block;
+            margin: 0 auto;
+        }
     }
 
     @media(min-width: 640px) {
         & {
             flex-direction: row;
-            .description {
-                width: 30%;
+
+            .stack {
+                align-self: flex-start;
+                border-top: 2px solid var(--accent);
+                padding-top: 1em;   
+            }
+
+            .descriptionContainer {
+                width: 100%;
+
+                a {
+                    margin-top: 1em;
+                    text-decoration: none;
+                    color: var(--accent);
+                    align-self: flex-start;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
             }
 
             .imageContainer {
-                width: 70%;
+                width: 50%;
             }
         }
     }
 
     @media(min-width: 1024px) {
-        &:nth-child(even) {
+    
+        &:nth-child(odd) {
             flex-direction: row-reverse;
         }
 
+        .descriptionContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: left;
+
+            h2 {
+                font-size: 3rem;
+            }
+        }
+
         .imageContainer {
+            margin: 0 2em;
+            
             img {
-                width: 100%;
+                height: 475px;
+                aspect-ratio: 1/1;
             }
         }
     }

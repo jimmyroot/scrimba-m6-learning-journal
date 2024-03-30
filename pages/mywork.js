@@ -5,6 +5,9 @@ const MyWork = () => {
 
     const render = () => {
         let html = `
+            <header>
+                <h1><span>A few examples of my work</span></h1>
+            </header>
             ${renderPortfolio()}
         `
 
@@ -13,21 +16,31 @@ const MyWork = () => {
 
     const renderPortfolio = () => {
         return portfolio.map(project => {
-            const { title, description, imgURL } = project
+            const { title, subtitle, description, stack, url, imgURL } = project
     
             return `
                 <div class="${styles.project}">
                     <div class="${styles.descriptionContainer}">
                         <h2>${title}</h2>
-                        <p>${description}</p>
+                        <p class="${styles.subtitle}">${subtitle}</p>
+                        ${description}
+                        <a href="${url}">Check it out!</a>
+                        <div class="${styles.stack}">
+                            ${stack.map(tech => `
+                                <div>${tech}</div>
+                            `).join('')}
+                        </div>
                     </div>
                     <div class="${styles.imageContainer}">
                         <img src="${imgURL}">
                     </div>
-                    
                 </div>
             `
         })
+    }
+
+    const renderStack = stack => {
+        return stack.map
     }
 
     const refresh = () => {

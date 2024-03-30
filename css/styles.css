@@ -5,6 +5,7 @@
     --secondary: #090909;
     --tertiary: #dddddd;
     --accent: #8447FF;
+    --br: 10px;
 }
 
 *, *::before, *::after {
