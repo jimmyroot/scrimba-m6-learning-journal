@@ -4,10 +4,6 @@
     flex-direction: column;
     padding: 2em 1em 0 1em;
 
-    & * {
-        /* border: 1px solid red; */
-    }
-
     header {
         display: flex;
         flex-direction: column;

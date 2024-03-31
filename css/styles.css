@@ -3,9 +3,11 @@
     --primary: #e9e9e9;
     --primary-alt: #e0e0e0;
     --secondary: #090909;
+    --secondary-alt: #999999;
     --tertiary: #dddddd;
     --accent: #8447FF;
-    --br: 10px;
+    --accent-alt: #d0b9ff;
+    --br: 5px;
 }
 
 *, *::before, *::after {
@@ -49,6 +51,16 @@ button > * {
     max-width: 1280px;
     min-width: 418px;
     margin: 0 auto;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 2.5rem;
+    }
 }
 
 /* body * {
