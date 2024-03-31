@@ -1,21 +1,73 @@
 .mywork {
     composes: container from '../css/styles.css';
 
-    header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 
-        h1 {
-            line-height: 1.2em;
+    .header {
+        position: relative;
+        max-height: 480px;
+        margin-bottom: 2em;
+        overflow: hidden;
+
+        img {
             display: block;
-            margin: 1em 0 0.5em 0.3em;
-    
-            span {
-                background-color: var(--accent);
-                color: white;
-                display: inline;
-                box-decoration-break: clone;
-                -webkit-box-decoration-break: clone;
-                box-shadow: 10px 0 0 var(--accent), -10px 0 0 var(--accent);
+            object-fit: cover;
+            height: auto;
+            aspect-ratio: 4/3;
+            width: 100%;
+        }
+        
+        div {
+            position: absolute;
+            bottom: 0;
+            padding: 2em 4em;
+
+            h1 {
+                line-height: 1.2em;
+                display: block;
+        
+                span {
+                    background-color: var(--accent);
+                    color: white;
+                    display: inline;
+                    box-decoration-break: clone;
+                    -webkit-box-decoration-break: clone;
+                    box-shadow: 10px 0 0 var(--accent), -10px 0 0 var(--accent);
+                }
             }
+
+            p {
+                span {
+                    background-color: var(--secondary);
+                    color: white;
+                    display: inline;
+                    box-decoration-break: clone;
+                    -webkit-box-decoration-break: clone;
+                    box-shadow: 10px 0 0 var(--secondary), -10px 0 0 var(--secondary);
+                }
+            }
+        }
+    }
+
+    @media (min-width: 640px) {
+        & { 
+            div {
+                h1 {
+                    font-size: 4rem;
+                }
+
+                p {
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 1024px) {
+        & { 
+
         }
     }
 }
@@ -23,7 +75,7 @@
 .project {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 1.5em;
     margin-bottom: 1em;
 
     .descriptionContainer {
@@ -31,12 +83,23 @@
         padding: 0 2em;
 
         h2 {
+            align-self: flex-start;
             color: var(--secondary);
             font-weight: 600;
+            background: linear-gradient(
+                            180deg,
+                            rgba(255, 255, 255, 0) 50%,
+                            var(--accent-alt) 50%
+                        )
+            
         }
 
         p {
             margin: 0.5em 0;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
         }
 
         .stack {
@@ -62,21 +125,28 @@
             aspect-ratio: 1/1;
             display: block;
             margin: 0 auto;
+            clip-path: polygon(
+                0 0,
+                100% 0,
+                100% 90%,
+                90% 100%,
+                0 100%
+            );
         }
     }
 
+    /* .project medium */
     @media(min-width: 640px) {
         & {
             flex-direction: row;
 
             .stack {
                 align-self: flex-start;
-                border-top: 2px solid var(--accent);
-                padding-top: 1em;   
             }
 
             .descriptionContainer {
                 width: 100%;
+                /* gap: 1.5em; */
 
                 a {
                     margin-top: 1em;
@@ -87,38 +157,46 @@
                     &:hover {
                         text-decoration: underline;
                     }
-                }
+                }   
             }
 
             .imageContainer {
                 width: 50%;
+
+                img {
+                    height: 300px;
+                }
+
             }
         }
     }
 
+    /* .project large */
     @media(min-width: 1024px) {
-    
+
         &:nth-child(odd) {
             flex-direction: row-reverse;
         }
 
-        .descriptionContainer {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: left;
-
-            h2 {
-                font-size: 3rem;
+        & {
+            .descriptionContainer {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: left;
+    
+                h2 {
+                    font-size: 3rem;
+                }
             }
-        }
-
-        .imageContainer {
-            margin: 0 2em;
-            
-            img {
-                height: 475px;
-                aspect-ratio: 1/1;
+    
+            .imageContainer {
+                margin: 0 2em;
+                
+                img {
+                    height: 475px;
+                    aspect-ratio: 1/1;
+                }
             }
         }
     }
