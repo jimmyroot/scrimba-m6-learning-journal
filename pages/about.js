@@ -1,4 +1,5 @@
 import styles from './about.module.css'
+import global from '../css/global.module.css'
 import avatarURL from '../assets/images/user-avatar.png'
 
 const About = () => {
@@ -26,8 +27,8 @@ const About = () => {
             <header>
                 <img class="${styles.avatar}" src="${avatarURL}" alt="A picture, a headshot of Jimmy, in a cartoon style.">
                 <h1>
-                    <span>
-                        Hi there! My name is Jimmy and welcome to my learning journal.
+                    <span class="${global.highlight}">
+                        Hey there! I'm Jimmy. Welcome to Tales from the Infinite Loop — where I write stuff (mostly) about learning to code. 
                     </span>
                 </h1>
             </header>

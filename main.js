@@ -12,9 +12,3 @@ import { router } from './app/router'
     router.renderStartPage()
     router.registerRouterWithBrowserNavigation()
 })()
-
-// TODO 1: Fix burger stay open if dragging window when it's already open
-// Style abou
-// Style my work and content (just some screenshots of my projects)
-// fix the disappearing backdrop on the posts and about pages
-// fix media query to flex in post view

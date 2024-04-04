@@ -10,22 +10,13 @@
     }
 
     h1 {
-        line-height: 1.2em;
+        line-height: 1.4em;
         display: block;
         margin: 1em 0 0.5em 0.3em;
-
-        span {
-            background-color: var(--accent);
-            color: white;
-            display: inline;
-            box-decoration-break: clone;
-            -webkit-box-decoration-break: clone;
-            box-shadow: 10px 0 0 var(--accent), -10px 0 0 var(--accent);
-        }
     }
 
     h2 {
-        font-size: 1rem;
+        font-size: 1.3rem;
         margin: 0.7em auto;
     }
 
@@ -38,9 +29,14 @@
         }
     }
 
+    p {
+        font-size: 1.1rem;
+    }
+
     .avatar {
         display: block;
         width: 200px;
+        align-self: start;
         aspect-ratio: 1/1;
         border-radius: 50%;
     }
@@ -56,15 +52,15 @@
         font-size: 0.9rem;
         font-weight: 400;
         line-height: 1.5;
-
+    
         &:hover {
             background-color: var(--secondary);
             text-decoration: none;
             color: var(--primary);
         }
-
+    
         &:active {
-            background-color: var(--accent);
+            background-color: var(--accent-alt);
         }
     }
 
@@ -76,6 +72,7 @@
                 flex-direction: row;
 
                 h1 {
+                    font-size: 1.8rem;
                     width: 80%;
                     display: block;
                     align-self: center;
@@ -85,15 +82,29 @@
             }
 
             .avatar {
+                align-self: center;
                 margin: 0;
                 padding: 0;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 1.2rem;
             }
         }
     }
 
     @media (min-width: 1280px) {
         & {
-            padding: 0 6em;
+            header {
+                h1 {
+                    font-size: 2.2rem;
+                }
+            }   
+            padding: 2em 6em;
         }
     }
 }

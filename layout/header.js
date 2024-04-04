@@ -12,6 +12,15 @@ const Header = () => {
         node.addEventListener('click', e => {
             handleClick(e)
         })
+        window.matchMedia('(min-width: 768px)').addEventListener('change', e => {
+            if (e.matches) {
+                const navWrapper = document.querySelector('#nav-wrapper')
+                if (!navWrapper.classList.contains(styles.hidden)) {
+                    navWrapper.classList.add(styles.hidden)
+                }
+            }
+        })
+
     }
     
     const handleClick = e => {
@@ -37,27 +46,36 @@ const Header = () => {
 
     // Render functions
     const render = () => {
+
         let html = `
             <div class="${styles.container}">
                 <div class="${styles.logo}">
                     <img src="${logoURL}">
-                    <h1>My learning journal</h1>
+                    <h1>Tales from the Infinite Loop</h1>
                 </div>
-                <div class="${styles.nav}">
-                    <ul class="${styles.menu} ${styles.hidden}" id="nav">
-                        <li class="${styles.item}"><a href="/" data-type="navigate">Home</a></li>
-                        <li class="${styles.item}"><a href="/about" data-type="navigate">About Me</a></li>
-                        <li class="${styles.item}"><a href="/mywork" data-type="navigate">My Work</a></li>
+                <div class="${styles.menu}">
+                    <div class="${styles.hidden}" id="nav-wrapper">
+                    
+                        <img class="${styles.burgerLogo}" src="${logoURL}">
+
+                        <ul id="nav">
+                            <li><a href="/" data-type="navigate">Home</a></li>
+                            <li><a href="/mywork" data-type="navigate">My Work</a></li>
+                            <li><a href="/about" data-type="navigate">About Me</a></li>
+                        </ul>
+
                         <button class="${styles.close}" data-type="hide">
-                            <i class='bx bx-x bx-lg'></i>
-                        </button>
-                    </ul>
+                                <i class='bx bx-x bx-lg'></i>
+                        </button>    
+                    </div>
+
                     <button class="${styles.burger}" id="div-burger" data-type="show">
-                        <i class='bx bx-menu bx-lg'></i>
+                            <i class='bx bx-menu bx-lg'></i>
                     </button>
+
                 </div>
                 <div class="${styles.bg}"></div>
-            <div>
+            </div>
             
         `
         return html
@@ -65,18 +83,34 @@ const Header = () => {
 
     const refresh = () => {
         node.innerHTML = render()
+        
     }
 
     const navShow = () => {
-        document.querySelector(`#nav`).classList.remove(`${styles.hidden}`)
+        document.querySelector(`#nav-wrapper`).classList.remove(styles.hidden)
     }
 
     const navHide = ()  => {
-        document.querySelector(`#nav`).classList.add(`${styles.hidden}`)
+        document.querySelector(`#nav-wrapper`).classList.add(styles.hidden)
+    }
+
+    const navUpdate = () => {
+        // Grab a list of li elements from nav
+        const navEls = Array.from(node.querySelector('#nav').children)
+        // Filter out the one that has the href matching current url 
+        const [ navElForCurrentPage ] = navEls.filter(el => el.firstChild.href === window.location.href)
+        // Clear selected style from all elements
+        navEls.forEach(el => el.firstChild.classList.remove(styles.selected))
+        // Test if there was a match, if there wasn't, this means we're on a blog post and 
+        // not on a 'main' page. If there was a match we assign it to aEl
+        const aEl = navElForCurrentPage && navElForCurrentPage.firstChild
+        // Finally we apply the selected class to the a element
+        if (aEl) aEl.classList.add(styles.selected)
     }
     
     const get = () => {
         refresh()
+        navUpdate()
         return node
     }
 
@@ -86,9 +120,9 @@ const Header = () => {
 
     return {
         get,
-        registerEventListeners
+        registerEventListeners,
+        navUpdate
     }
-
 }
 
 export const header = Header()

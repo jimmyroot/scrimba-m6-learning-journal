@@ -2,6 +2,7 @@ import { posts } from '../app/data'
 import { router } from '../app/router.js'
 import * as helper from '../app/helper'
 import styles from './post.module.css'
+import global from './post.module.css'
 
 const Post = () => {
 
@@ -20,8 +21,6 @@ const Post = () => {
                 window.history.go(-1)
             },
             navigateToPost: () => {
-                // console.log('fired')
-                // console.log(e.target.href)
                 e.preventDefault()
                 router.navigateToPost(e, e.target.dataset.id)
             }
@@ -35,14 +34,14 @@ const Post = () => {
 
         const post = posts.find(post => post.id === +postId)
 
-        const { id, author, title, path, imgURL, imgAltTxt, date, intro, content } = post
+        const { id, author, title, imgURL, imgAltTxt, date, intro, content } = post
         
         renderedPostId = id
 
         let html = `
             <div class="${styles.postInner}">
                 <p class="${styles.date}">${helper.dateFormatted(date)} by <span><a href="/about">${author}</a><span></p>
-                <h1><span>${title}</span></h1>
+                <h1>${title}</h1>
                 <p>${intro}</p>
             </div>
             <img src="${imgURL}" alt="${imgAltTxt}">
@@ -57,15 +56,44 @@ const Post = () => {
         return html
     }
 
-    // Default to all posts unless we specify a number
-    const getRecentPosts = (numPostsToRender = posts.length, exceptPostId = null, showHeader = false) => {
-        const postsToRender = posts.filter(post => post.id != exceptPostId)
+    /// Decided to use an object to pass the arguments for the post functions, as it makes the 
+    // purpose of each argument easier to read. Default options are set so we can call getPosts with
+    // no arguments and will receive all posts in the DB in return
+    const getPosts = (options = {
+        qty: posts.length,
+        postIdToExclude: null,
+        showHeader: false,
+        randomize: false
+    }) => {
+        // const postsToRender = posts.filter(post => post.id != exceptPostId)
+        const { qty, postIdToExclude, showHeader, randomize } = options
+        
+        let postsToRender = null
+
+        if (randomize) {
+            const options = {
+                postArr: posts,
+                qty: qty,
+                postIdToExclude: postIdToExclude,
+                shuffle: false
+            }
+            postsToRender = getRandomPosts(options)
+        } else {
+            const options = {
+                postArr: posts,
+                qty: qty,
+                postIdToExclude: postIdToExclude
+            }
+            postsToRender = getOrderedPosts(options)
+        }
+
+        // console.log(postsToRender)
 
         let html = showHeader ? `<h2 class="${styles.heading}">Recent Posts</h2><div class="${styles.recentPostsContainer}">` : `<div class="${styles.recentPostsContainer}">`
 
-        html += postsToRender.map((post, index, array) => {
+        html += postsToRender.map(post => {
             const { id, author, title, path, imgURL, imgAltTxt, date, intro } = post
-            if ((index) < numPostsToRender) {
+            
                 return `
                     <div class="${styles.recentPost}">
                         <img src="${imgURL}" alt="${imgAltTxt}">
@@ -76,7 +104,7 @@ const Post = () => {
                         <p>${intro}</p>
                     </div>
                 `
-            }
+            
         }).join('').concat('</div>')
 
         const recentPosts = new DOMParser().parseFromString(html, 'text/html').body.children
@@ -92,6 +120,74 @@ const Post = () => {
         return recentPostsSection
     }
 
+    const getRandomPosts = (options = {
+
+        postArr: posts,
+        qty: posts.length,
+        postIdToExclude: null,
+        shuffle: false
+
+    }) => {
+
+        const { postArr, qty, postIdToExclude, shuffle } = options
+        const totalPostsInDb = getTotalPostsInDb()
+        const postsToRender = []
+    
+        // This will always result in a random order, so if shuffle is 'false',
+        // we'll re-order below
+        do {
+            const randomPostId = helper.getRandomBetweenAndIncluding(1, totalPostsInDb)
+            if (!postsToRender.includes(randomPostId) && randomPostId != postIdToExclude) postsToRender.push(randomPostId)
+        } while (postsToRender.length < qty)
+    
+        // If shuffle is set to false, we should order the array before retrieving posts, it's easier
+        // to sort the IDs in postsToRender now, than to sort the actual posts after retrieving them
+        // in the next step
+        shuffle ? helper.shuffleArray(postsToRender) : postsToRender.sort()
+
+        // Return a new array containing only the selected qty/order of posts
+        return postArr.reduce((arr, post) => {
+            if (postsToRender.includes(post.id)) arr.push(post)
+            return arr
+        }, [])
+    }
+
+    // const getRandomPosts = (posts, qty, excluding, shuffle = false) => {
+    //     const totalPosts = posts.length
+    //     const postsToRender = []
+    
+    //     // This will always result in a random order
+    //     do {
+    //         const random = helper.getRandomBetweenAndIncluding(1, totalPosts)
+    //         if (!postsToRender.includes(random) && random != excluding) postsToRender.push(random)
+    //     } while (postsToRender.length < qty)
+    
+    //     // If shuffle is set to false, we should order the array before retrieving posts, it's easier
+    //     // to sort the IDs in postsToRender than to sort the actual posts in the next step
+    //     shuffle ? helper.shuffleArray(postsToRender) : postsToRender.sort()
+
+    //     // Return a new array containing only the selected qty/order of posts
+    //     return posts.reduce((arr, post) => {
+    //         if (postsToRender.includes(post.id)) arr.push(post)
+    //         console.log(arr.length)
+    //         return arr
+    //     }, [])
+    // }
+
+    const getOrderedPosts = (options = {
+        postArr: posts,
+        qty: posts.length,
+        postIdToExclude: null
+    }) => {
+        const { postArr, qty, postIdToExclude } = options
+        return postArr.reduce((arr, post) => {
+            if (arr.length < qty && post.id != postIdToExclude ) {
+                arr.push(post)
+            }
+            return arr
+        }, [])
+    }
+
     const getPostByPath = path => {
         const postToRender = posts.find(post => post.path === `/${path}`)
         if (postToRender) {
@@ -104,6 +200,10 @@ const Post = () => {
 
     const getRenderedPostId = () => {
         return renderedPostId
+    }
+
+    const getTotalPostsInDb = () => {
+        return posts.length
     }
 
     const refresh = postId => {
@@ -122,8 +222,9 @@ const Post = () => {
     return {
         get,
         getPostByPath,
-        getRecentPosts,
-        getRenderedPostId
+        getPosts,
+        getRenderedPostId,
+        getTotalPostsInDb
     }
 }
 

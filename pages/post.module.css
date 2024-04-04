@@ -7,15 +7,6 @@
     h1 {
         line-height: 1.2em;
         margin: 0.7em 0 0.5em 0.3em;
-
-        span {
-            background-color: var(--accent);
-            color: white;
-            display: inline;
-            box-decoration-break: clone;
-            -webkit-box-decoration-break: clone;
-            box-shadow: 10px 0 0 var(--accent), -10px 0 0 var(--accent);
-        }
     }
 
     h2 {
@@ -76,7 +67,7 @@
         }
 
         &:active {
-            background-color: var(--accent);
+            background-color: var(--accent-alt);
         }
     }
  
@@ -100,7 +91,6 @@
             }
 
             p {
-                /* background-color: pink; */
                 font-size: 1.2rem;
             }
         }

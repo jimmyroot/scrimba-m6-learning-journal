@@ -2,6 +2,7 @@ import { home } from '../pages/home'
 import { post } from '../pages/post'
 import { myWork } from '../pages/mywork'
 import { about } from '../pages/about'
+import { header } from '../layout/header'
 
 const Router = () => {
 
@@ -51,7 +52,7 @@ const Router = () => {
         render(route)
     }
 
-    const navigateToPost = (e, id) => {
+    const navigateToPost = (e) => {
     
         // routes['/post'].content = post.get(id)
         const route = `/post${e.target.pathname}`
@@ -79,12 +80,20 @@ const Router = () => {
             const postPath = path[2]
             // try to set post content to the requested post, getPostByPath will return
             // false if it can't find the post
-            let html = post.getPostByPath(postPath)
+            let postToRender = post.getPostByPath(postPath)
 
             // if post was retrieved successfully, append recent posts 
-            if (html) {
-                const recentPostsSection = post.getRecentPosts(3, post.getRenderedPostId(), true)
-                routes['/post'].content = [html, recentPostsSection]
+            if (postToRender) {
+                const options = {
+                    qty: 3,
+                    postIdToExclude: post.getRenderedPostId(),
+                    showHeader: true,
+                    randomize: true
+                }
+                // console.log(options)
+                const recentPostsSection = post.getPosts(options)
+
+                routes['/post'].content = [postToRender, recentPostsSection]
             }
 
             // If the post was returned successfully, set route to post, else if it's 'false' set route to
@@ -100,6 +109,8 @@ const Router = () => {
         catch {
             document.querySelector('#app').replaceChildren(routes['/unknown'].content)
         }
+
+        header.navUpdate()
     }
 
     return {

@@ -1,11 +1,11 @@
-import blogOneImageURL from '../assets/images/blogimg.jpg'
-import blogTwoImageURL from '../assets/images/blogimg.jpg'
-import blogThreeImageURL from '../assets/images/blogimg.jpg'
-import blogFourImageURL from '../assets/images/blogimg.jpg'
-import blogFiveImageURL from '../assets/images/blogimg.jpg'
-import blogSixImageURL from '../assets/images/blogimg.jpg'
-import blogSevenImageURL from '../assets/images/blogimg.jpg'
-import imgUrlRestaurantApp from '../assets/images/coolbeans.png'
+import imgUrlDesk from '../assets/images/desk.png'
+import imgUrlScrimba from '../assets/images/scrimba.png'
+import imgUrlCSSModules from '../assets/images/modules.png'
+import imgUrlMotivation from '../assets/images/motivation.png'
+import imgUrlModularJs from '../assets/images/modularjs.png'
+import imgUrlExtensions from '../assets/images/extensions.png'
+import imgUrlArrays from '../assets/images/arrays.png'
+import imgUrlRestaurantApp from '../assets/images/restaurant-ordering.png'
 import imgUrlInvoiceCreator from '../assets/images/invoicecreator.png'
 import imgUrlChoreslist from '../assets/images/choreslist.png'
 import imgUrlBestBank from '../assets/images/bestbank.png'
@@ -17,7 +17,7 @@ export const posts = [
         author: 'Jimmy',
         title: 'My new journey as a bootcamp student',
         path: `/my-new-journey-as-a-bootcamp-student`,
-        imgURL: blogOneImageURL,
+        imgURL: imgUrlDesk,
         imgAltTxt: 'Some descriptive text',
         date: new Date(2024, 2, 10),
         intro: `
@@ -49,9 +49,9 @@ export const posts = [
     {
         id: 2,
         author: 'Jimmy',
-        title: 'A simple way to format code blocks with CSS',
-        path: `/a-simple-way-to-format-code-blocks-with-css`,
-        imgURL: blogTwoImageURL,
+        title: 'So, why Scrimba?',
+        path: `/so-why-scrimba`,
+        imgURL: imgUrlScrimba,
         imgAltTxt: 'Some alt text',
         date: new Date(2024, 2, 9),
         intro: `
@@ -72,9 +72,9 @@ export const posts = [
     {
         id: 3,
         author: 'Jimmy',
-        title: 'Blog Three',
-        path: `/blog-three`,
-        imgURL: blogThreeImageURL,
+        title: 'An introduction to CSS modules',
+        path: `/an-introduction-to-css-modules`,
+        imgURL: imgUrlCSSModules,
         imgAltTxt: 'Some descriptive text',
         date: new Date(2024, 2, 8),
         intro: `
@@ -95,9 +95,9 @@ export const posts = [
     {
         id: 4,
         author: 'Jimmy',
-        title: 'Blog Four',
-        path: `/blog-four`,
-        imgURL: blogFourImageURL,
+        title: 'A few thoughts on staying motivated',
+        path: `/a-few-thoughts-on-staying-motivated`,
+        imgURL: imgUrlMotivation,
         imgAltTxt: 'Some descriptive text',
         date: new Date(2024, 2, 7),
         intro: `
@@ -118,9 +118,9 @@ export const posts = [
     {
         id: 5,
         author: 'Jimmy',
-        title: 'Blog Five',
-        path: `/blog-five`,
-        imgURL: blogFiveImageURL,
+        title: 'My experiences with modular JavaScript',
+        path: `/my-experiences-with-modular-javascript`,
+        imgURL: imgUrlModularJs,
         imgAltTxt: 'Some descriptive text',
         date: new Date(2024, 2, 6),
         intro: `
@@ -141,9 +141,9 @@ export const posts = [
     {
         id: 6,
         author: 'Jimmy',
-        title: 'Blog Six',
-        path: `/blog-six`,
-        imgURL: blogSixImageURL,
+        title: 'My favorite VS Code extensions and themes',
+        path: `/my-favorite-vs-code-extensions-and-themes`,
+        imgURL: imgUrlExtensions,
         imgAltTxt: 'Some descriptive text',
         date: new Date(2024, 2, 5),
         intro: `
@@ -164,9 +164,9 @@ export const posts = [
     {
         id: 7,
         author: 'Jimmy',
-        title: 'Blog Seven',
-        path: `/blog-seven`,
-        imgURL: blogSevenImageURL,
+        title: `Let's talk about array methods`,
+        path: `/lets-talk-about-array-methods`,
+        imgURL: imgUrlArrays,
         imgAltTxt: 'Some descriptive text',
         date: new Date(2024, 2, 20),
         intro: `
@@ -192,10 +192,8 @@ export const portfolio = [
         subtitle: `An online ordering service app mockup`,
         description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-        nisi ut aliquip ex ea commodo consequat.</p>
-        <p>Duis aute irure dolor in
-        reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+        Ut enim ad minim veniam.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
         nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
         sunt in culpa qui officia deserunt mollit anim id est laborum.</p>`,
         stack: [
@@ -211,15 +209,10 @@ export const portfolio = [
         subtitle: `A mockup of an app for creating and sending invoices`,
         description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-        reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+        Ut enim ad minim veniam.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
         nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-        sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-        nisi ut aliquip ex ea commodo consequat.</p>`,
+        sunt in culpa qui officia deserunt mollit anim id est laborum.</p>`,
         stack: [
             'HTML',
             'CSS',
@@ -232,15 +225,10 @@ export const portfolio = [
         subtitle: `A simple to-do list app`,
         description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-        reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+        Ut enim ad minim veniam.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
         nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-        sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-        nisi ut aliquip ex ea commodo consequat.</p>`,
+        sunt in culpa qui officia deserunt mollit anim id est laborum.</p>`,
         stack: [
             'HTML',
             'CSS',
@@ -253,15 +241,10 @@ export const portfolio = [
         subtitle: `A mockup for a fictitious online bank`,
         description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-        reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+        Ut enim ad minim veniam.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
         nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-        sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-        nisi ut aliquip ex ea commodo consequat.</p>`,
+        sunt in culpa qui officia deserunt mollit anim id est laborum.</p>`,
         stack: [
             'HTML',
             'CSS',
@@ -273,15 +256,10 @@ export const portfolio = [
         subtitle: `A simple unit converter app`,
         description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-        reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+        Ut enim ad minim veniam.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
         nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-        sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-        nisi ut aliquip ex ea commodo consequat.</p>`,
+        sunt in culpa qui officia deserunt mollit anim id est laborum.</p>`,
         stack: [
             'HTML',
             'CSS',

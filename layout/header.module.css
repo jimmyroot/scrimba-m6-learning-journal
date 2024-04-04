@@ -1,23 +1,23 @@
 .header {
-    background-color: var(--primary);
+    background-color: var(--primary-alt);
     width: 100%;
     min-height: 60px;
 }
 
 .container {
-    background-color: var(--primary-alt);
+    background-color: var(--primary);
+    justify-content: space-between;
+    align-items: center;
     max-width: 1280px;
     min-width: 418px;
     height: 100%;
-    display: grid;
-    grid-template-columns: 1em 1.2fr 0.8fr 1em;
-    grid-template-areas:
-        ". logo menu .";
+    display: flex;
+    padding: 0 1em;
     margin: 0 auto;
 }
 
 .bg {
-    background-color: var(--primary);
+    background-color: var(--tertiary);
     opacity: 0.6;
     width: 100dvw;
     position: absolute;
@@ -38,7 +38,7 @@
     justify-content: left;
     align-items: center;
     gap: 0.5em;
-    grid-area: logo;
+   
 
     img {
         display: block;
@@ -50,6 +50,7 @@
         display: inline;
         font-size: 1.2rem;
         margin-left: 0.2em;
+        color: var(--secondary);
     }
 
     @media (min-width: 640px) {
@@ -62,128 +63,182 @@
     }
 }
 
-.nav {
+.menu {
     display: flex;
-    justify-content: end;
+    flex-direction: column;
     align-items: center;
-    grid-area: menu;
 
-    .menu {
-        list-style-type: none;
-        background-color: var(--primary);
+    div {
         display: flex;
-        align-items: center;
         flex-direction: column;
-        height: 100dvh;
-        min-width: fit-content;
+        background-color: var(--primary);
         z-index: 10;
         position: fixed;
         right: 0;
         top: 0;
+        box-shadow: var(--shadow-elevation-medium);
+        height: 100dvh;
         width: 50%;
         padding-top: 4em;
-        margin: 0;
-        
-        li a {
-            color: var(--secondary);
-            letter-spacing: 1.3;
-            font-size: 1.5rem;
-            font-weight: 300;
-            text-transform: uppercase;
-            text-decoration: none;
-            padding: 0 0.3em;
 
-            &:hover {
-                background-color: var(--secondary);
-                color: var(--primary);
+        ul {
+            display: flex;
+            list-style-type: none;
+            flex-direction: column;
+            align-items: center;
+            min-width: fit-content;
+            margin: 0;
+            padding: 0;
+            
+            li .selected {
+                border-left: 4px solid var(--accent-alt);
+                pointer-events: none;
             }
 
-            &:active {
-                background-color: var(--accent);
+            li {
+                margin-bottom: 1em;
+                padding: 0 0.3em;
+            }
+
+            li a {
+                color: var(--secondary);
+                letter-spacing: 1.3;
+                font-size: 1.5rem;
+                font-weight: 300;
+                text-transform: uppercase;
+                text-decoration: none;
+                padding: 0 0.3em;
+
+                &:hover {
+                    background-color: var(--secondary);
+                    color: var(--primary);
+                }
+
+                &:active {
+                    background-color: var(--accent-alt);
+                }
             }
         }
 
-        li {
-            margin-bottom: 1em;
-            padding: 0 0.3em;
+        .burgerLogo {
+            display: none;
         }
 
         .close {
+            display: none;
             border: none;
             background: none;
             position: absolute;
             top: 0.4em;
             right: 1em;
             cursor: pointer;
-
+    
             &:active {
                 transform: scale(0.9);
             }
-        }
+        }   
     }
+
+    .hidden {
+        display: none;
+    }    
 
     .burger {
         display: flex;
         border: none;
         background: none;
         cursor: pointer;
+        padding: 0;
 
         &:active {
             transform: scale(0.9);
         }
     }
 
-    .hidden {
-        display: none;
-    }
-
     /* NAV MEDIA QUERIES */
     @media (max-width: 480px) {
         & {
-            .menu {
-                width: 100dvw;
-            }
+            div {
+                width: 100%;
+                padding-top: 0;
 
-            li a {
-                font-size: 5rem;
-            }   
-        }
+                ul {
+                    li a {
+                        font-size: 2.5rem;
+                    }
+                }
+
+                .burgerLogo {
+                    align-self: center;
+                    display: block;
+                    width: 50px;
+                    aspect-ratio: 1/1;
+                    margin: 1.5em 0;
+                }
+            }
+        }   
     }
 
     @media (min-width: 768px) {
         & {
-            .menu {
-                background-color: transparent;
-                display: flex;
-                flex-direction: row;
+            div {
                 position: relative;
-                height: 100%;
                 width: 100%;
-                padding: 0;
-                justify-content: right;
-                gap: 2em;
-                align-items: center;
-            
-                li a {
-                    font-size: 0.9rem;
-                    font-weight: 400;
-                    text-transform: uppercase;
-                    text-decoration: none;
-                    padding: 0 0.3em;
+                height: auto;
+                display: flex;
+                box-shadow: none;
+                padding-top: 0;
+
+                ul {
+                    background-color: transparent;
+                    display: flex;
+                    flex-direction: row;
+                    position: relative;
+                    height: 100%;
+                    width: 100%;
+                    padding: 0;
+                    justify-content: right;
+                    gap: 2em;
+                    align-items: center;
+                    box-shadow: none;
+                
+                    li a {
+                        font-size: 0.9rem;
+                        font-weight: 400;
+                        text-transform: uppercase;
+                        text-decoration: none;
+                        padding: 0 0.3em;
+                    }
+
+                    li {
+                        margin: 0;
+                    }
+
+                    .close {
+                        display: none;
+                    }
+
+                    li .selected {
+                        border-left: 0;
+                        border-bottom: 4px solid var(--accent-alt);
+                        pointer-events: none;
+                    }
                 }
 
-                li {
-                    margin: 0;
-                }
-
-                .close {
+                .burgerLogo { 
                     display: none;
                 }
             }
-        }
 
-        .burger {
-            display: none;
-        }      
+            .hidden {
+                display: flex;
+            }
+    
+            .burger {
+                display: none;
+            }
+
+            
+        }
     }
 }

@@ -1,4 +1,5 @@
 import styles from './home.module.css'
+import global from '../css/global.module.css'
 import { router } from '../app/router'
 import { posts } from '../app/data'
 import * as helper from '../app/helper'
@@ -6,9 +7,8 @@ import { post } from './post'
 
 const Home = () => {
 
-    // Init
-    const featuredPostId = 1
-    let viewMore = false
+    // Initialization is done at the bottom above return, as we rely on some functions
+    // declared below
 
     const registerEventListeners = () => {
         node.addEventListener('click', e => {
@@ -45,9 +45,21 @@ const Home = () => {
 
     const render = () => {
         const featuredPost = renderFeaturedPost(featuredPostId)
-        const recentPosts = viewMore ?
-            post.getRecentPosts(6, featuredPostId, false) :
-            post.getRecentPosts(numberOfPostsToRender, featuredPostId, false)
+
+        const options = viewMore ? {
+            qty: post.getTotalPostsInDb(),
+            postIdToExclude: featuredPostId,
+            showHeader: false,
+            randomize: false
+        } : {
+            qty: numberOfPostsToRender,
+            postIdToExclude: featuredPostId,
+            showHeader: false,
+            randomize: false
+        }
+        
+        const recentPosts = post.getPosts(options)
+
         const btnViewMore = renderViewMoreBtn()
 
         return [featuredPost, recentPosts, btnViewMore]
@@ -63,15 +75,22 @@ const Home = () => {
         el.innerHTML = `
             <img src="${imgURL}" alt="${imgAltTxt}">
             <div>
-                <p class="${styles.date}">${helper.dateFormatted(date)} by 
-                    <a href="/about">
-                        ${author}
-                    </a>
+
+                <p class="${styles.date}"><span class="${global.highlight}">
+                        ${helper.dateFormatted(date)} by 
+                        <a href="/about">
+                            ${author}
+                        </a>
+                    </span<
                 </p>
-                <a href="${path}" data-type="navigateToPost" data-id="${id}">
-                    <h1>${title}</h1>
-                </a>
-                <p>${intro}</p>
+                
+                <h1 class="${styles.featuredHeader}">
+                    <a href="${path}" data-type="navigateToPost" data-id="${id}">
+                        <span class="${global.highlight}">${title}</span>
+                    </a>
+                </h1>
+
+                <p><span class="${global.highlight}">${intro}</span></p>
             </div>
         `
 
@@ -83,7 +102,6 @@ const Home = () => {
         btn.classList.add(styles.viewMore)
         btn.dataset.type = 'more'
         btn.textContent = viewMore ? 'View Less' : 'View More'
-
         return btn
     }
 
@@ -118,6 +136,9 @@ const Home = () => {
     // Initialization stuff
     const node = document.createElement('div')
     node.classList.add(styles.home)
+    
+    const featuredPostId = 1
+    let viewMore = false
     let numberOfPostsToRender = getNumberOfPostsToRender()
 
     return {

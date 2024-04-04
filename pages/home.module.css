@@ -12,6 +12,7 @@
     overflow: hidden;
 
     img {
+        position: relative;
         display: block;
         object-fit: cover;
         height: auto;
@@ -28,6 +29,17 @@
         bottom: 0;
         padding: 2em;
 
+        h1 {
+            font-size: 2rem;
+            line-height: 1.35
+        }
+        
+        p {
+            margin-top: .8em;
+            display: block;
+            max-height: 50%;
+        }
+
         a {
             color: white;
             text-decoration: none;
@@ -36,14 +48,10 @@
                 text-decoration: underline;
             }
 
-            h1 {
+            .featuredHeader {
+                font-size: 3rem;
                 line-height: 1.2;
             }
-        }
-        
-        p {
-            display: block;
-            max-height: 50%;
         }
 
         .date {
@@ -54,17 +62,13 @@
     @media (min-width: 640px) {
         & {
             margin-bottom: 3em;
-
+            
             div {
                 padding: 3em;
                 width: 80%;
                 
-                a {
-                    color: var(--primary);
-
-                    h1 {
-                        font-size: 3rem;
-                    }
+                h1 {
+                    font-size: 3rem;
                 }
 
                 p {
@@ -74,6 +78,14 @@
             }
         }
     }
+
+    @media (min-width: 1024px) {
+         & {
+            img {
+                transform: translateY(-36%);
+            }
+         }
+    } 
 
     @media (min-width: 1214px) {
         & {

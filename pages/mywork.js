@@ -1,22 +1,24 @@
-import { portfolio } from '../app/data'
 import styles from './mywork.module.css'
-import imgUrlDesk from '../assets/images/desk.png'
+import global from '../css/global.module.css'
+import { portfolio } from '../app/data'
+import imgUrlKb from '../assets/images/kb.png'
 
 const MyWork = () => {
 
     const render = () => {
         let html = `
             <header class="${styles.header}">
-                <img src="${imgUrlDesk}" alt="Image of a developer's desk">
+                <img src="${imgUrlKb}" alt="Image of a developer's desk">
                 <div>
-                    <h1><span>My work</span></h1>
-                    <p><span>
-                    A few examples of my recent efforts, collected here for your viewing
+                    <h1><span class="${global.highlight}">Some of my work</span></h1>
+                    <p><span class="${global.highlight}">
+                    A small collection of projects, built whilst studying the Frontend Development Career path at Scrimba.
                     </span></p>
                 </div>
             </header>
-        
+            <section class="${styles.projectsContainer}">
             ${renderPortfolio()}
+            </section>
         `
 
         return html
@@ -28,11 +30,13 @@ const MyWork = () => {
     
             return `
                 <div class="${styles.project}">
+
                     <div class="${styles.descriptionContainer}">
                     
                         <h2>${title}</h2>
                         
                         <p class="${styles.subtitle}">${subtitle} — <a href="${url}">check it out!</a></p>
+                        
                         ${description}
                         
                         <div class="${styles.stack}">
@@ -40,18 +44,16 @@ const MyWork = () => {
                                 <div>${tech}</div>
                             `).join('')}
                         </div>
+
                     </div>
-                    <div class="${styles.imageContainer}">
+
+                    
                         <img src="${imgURL}">
-                    </div>
+                    
                     
                 </div>
             `
-        })
-    }
-
-    const renderStack = stack => {
-        return stack.map
+        }).join('')
     }
 
     const refresh = () => {
