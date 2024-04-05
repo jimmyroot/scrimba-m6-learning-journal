@@ -21,29 +21,42 @@ export const posts = [
         imgAltTxt: 'Some descriptive text',
         date: new Date(2024, 2, 10),
         intro: `
-            After several months of learning in the Frontend Developer Career Path, 
-            I've made the big jump over to the Bootcamp to get expert code reviews of 
-            my Solo Projects projects and meet like-minded peers.
+            After completing the first module of Scrimba's FrontEnd Development Career Path,
+            I knew I had to jump in and see what the full Bootcamp experience had to offer. I haven't
+            been disappointed! Read on to find out why.
         `,
         content: `
-            <h2>How I stay committed to learning</h2>
+            <h2>First, some history</h2>
+            <p>I first took an interest in web development over twenty years ago, in my teens. Although
+            I learned some very basic design and development skills, my career swung in the direction of
+            IT systems management and I had less and less time for what I'd always treated more as a 'hobby'.</p>
+            <p>In 2023 I decided it was time to stop messing around—I wanted to take my knowledge and abilities to
+            a level where I would be employable as a developer.</p>
+            <h2>How I found Scrimba</h2>
+            <p>After a few months of trying to learn different skills with no real direction, I was reading reviews
+            of Udemy courses on reddit when I saw a fellow learner make the bold claim that they had 'switched
+            to learning on Scrimba and never looked back.' Colour me curious...</p>
+            <p>I signed up for some of the free courses, but almost immediately after reviewing the FrontEnd Development Career
+            path contents, I signed up for the 'Pro' membership and began to hit it hard. After completing the first module, 
+            I decided I needed to try the bootcamp; I was drawn in by the opportunity of getting my code reviewed by 
+            professional developers.</p>
+            <h2>My experience with the bootcamp</h2>
+            <p>I'm still here nearly 6 months later, what can I say? There are a couple of things 
+            that really set the bootcamp apart. The first is the community. It really is priceless to be a 
+            part of a community of like-minded individuals who are all moving toward the same goal. I don't
+            think I ever encountered so many friendly and helpful people
+            all gathered together in one place, from learners to professionals.</p>
+            <p>I realised quickly that a community is what I've been missing all these years.
+            I don't think I'd of kept going for this long if it wasn't for them. If 
+            you want to learn coding and web development but struggle with loneliness or motivation, 
+            I would highly encourage you to join Scrimba just for the community alone.</p>
+            <p>It turns out however, that Scrimba has more tricks up it's sleeve. The interactive screen-casts 
+            are the next best thing to being in a live classroom environment, and coupled with the lively community 
+            make Scrimba a unique learning experience. For a serial non-completionist like me, there's no
+            better platform. Because of these factors, I'm quite certain that the Scrimba FrontEnd Development Career path will 
+            be the first online course in twenty years that I actually finish!</p>
+            <p>Peace.</p>
 
-            <p>I like to think of myself as a lifelong learner. I used to spend hours and 
-            hours learning, then try to create simple projects using what I learned or
-            work new techniques into existing projects.</p>
-            
-            <p>While that was fun, I felt like it would be helpful to share what I was 
-            learning and most things about my journey with the world.</p>
-            
-            <h2>How I got started</h2>
-            
-            <p>I started simple and gradually grew my learning journal site. 
-            I would take notes about what I was learning. After each learning session, 
-            I'd use my notes to not only reflect on what I learned but also write short 
-            summaries of what I learned using my own words.</p>
-            
-            <p>That helped me grok what I was learning, and I realized that posting 
-            my learning summaries was also helping others learn and stay motivated.</p>
         `
     },
     {
@@ -55,9 +68,9 @@ export const posts = [
         imgAltTxt: 'Some alt text',
         date: new Date(2024, 2, 9),
         intro: `
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+            In my last post, I told you a little bit about why Scrimba is so awesome.
+            Let's dive in a little bit deeper and talk about why I believe it's the 
+            best online learning platform.
         `,  
         content: `
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
@@ -67,6 +80,16 @@ export const posts = [
             reprehenderit in voluptate velit esse cillum dolore eu fugiat 
             nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
             sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
+            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae 
+            ab illo inventore veritatis et quasi architecto beatae vitae dicta
+            sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur 
+            aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione 
+            voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem 
+            ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia 
+            non numquam eius modi tempora incidunt ut labore et dolore magnam 
+            aliquam quaerat voluptatem.</p>
+            <p>Et harum quidem rerum facilis est et expedita distinctio.</p>
         `
     },
     {
@@ -78,41 +101,60 @@ export const posts = [
         imgAltTxt: 'Some descriptive text',
         date: new Date(2024, 2, 8),
         intro: `
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+            I was recently intrigued by an article I read recently about CSS
+            modules and decided to dive in the deep end...here's what I learned.
+            Let's see if I can convince you to try them out! 
         `,
         content: `
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-        reprehenderit in voluptate velit esse cillum dolore eu fugiat 
-        nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-        sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+            sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
+            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae 
+            ab illo inventore veritatis et quasi architecto beatae vitae dicta
+            sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur 
+            aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione 
+            voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem 
+            ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia 
+            non numquam eius modi tempora incidunt ut labore et dolore magnam 
+            aliquam quaerat voluptatem.</p>
+            <p>Et harum quidem rerum facilis est et expedita distinctio.</p>
         `
     },
     {
         id: 4,
         author: 'Jimmy',
-        title: 'A few thoughts on staying motivated',
-        path: `/a-few-thoughts-on-staying-motivated`,
+        title: 'Boosting motivation',
+        path: `/boosting-motivation`,
         imgURL: imgUrlMotivation,
         imgAltTxt: 'Some descriptive text',
         date: new Date(2024, 2, 7),
         intro: `
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+            If you're anything like me, motivation can be a daily struggle. Here's some
+            actionable strategies to stay motivated.
         `,  
         content: `
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-        reprehenderit in voluptate velit esse cillum dolore eu fugiat 
-        nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-        sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+            sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
+            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae 
+            ab illo inventore veritatis et quasi architecto beatae vitae dicta
+            sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur 
+            aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione 
+            voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem 
+            ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia 
+            non numquam eius modi tempora incidunt ut labore et dolore magnam 
+            aliquam quaerat voluptatem.</p>
+            <p>Et harum quidem rerum facilis est et expedita distinctio.</p>
         `
     },
     {
@@ -124,18 +166,28 @@ export const posts = [
         imgAltTxt: 'Some descriptive text',
         date: new Date(2024, 2, 6),
         intro: `
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+            As you progress, it won't be long before your .js files start to get pretty
+            damned beefy. The solution? Modular JavaScript. Let's get into
+            the weeds...
         `,  
         content: `
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-        reprehenderit in voluptate velit esse cillum dolore eu fugiat 
-        nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-        sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+            sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
+            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae 
+            ab illo inventore veritatis et quasi architecto beatae vitae dicta
+            sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur 
+            aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione 
+            voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem 
+            ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia 
+            non numquam eius modi tempora incidunt ut labore et dolore magnam 
+            aliquam quaerat voluptatem.</p>
+            <p>Et harum quidem rerum facilis est et expedita distinctio.</p>
         `
     },
     {
@@ -147,18 +199,28 @@ export const posts = [
         imgAltTxt: 'Some descriptive text',
         date: new Date(2024, 2, 5),
         intro: `
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+            Who doesn't love a good theme? But that's just the start of VSCode 
+            customizations. Here are the extensions I can't live without—I bet
+            there's at least one that you won't be able to, either!
         `,  
         content: `
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-        reprehenderit in voluptate velit esse cillum dolore eu fugiat 
-        nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-        sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+            sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
+            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae 
+            ab illo inventore veritatis et quasi architecto beatae vitae dicta
+            sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur 
+            aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione 
+            voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem 
+            ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia 
+            non numquam eius modi tempora incidunt ut labore et dolore magnam 
+            aliquam quaerat voluptatem.</p>
+            <p>Et harum quidem rerum facilis est et expedita distinctio.</p>
         `
     },
     {
@@ -170,18 +232,28 @@ export const posts = [
         imgAltTxt: 'Some descriptive text',
         date: new Date(2024, 2, 20),
         intro: `
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+            Every time I'm trying to do something new with an array, it nearly always
+            turns out there's already a method for it. Let's review the most useful 
+            built in array functions! Yes, even .reduce()...
         `,  
         content: `
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-        reprehenderit in voluptate velit esse cillum dolore eu fugiat 
-        nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-        sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+            sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
+            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae 
+            ab illo inventore veritatis et quasi architecto beatae vitae dicta
+            sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur 
+            aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione 
+            voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem 
+            ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia 
+            non numquam eius modi tempora incidunt ut labore et dolore magnam 
+            aliquam quaerat voluptatem.</p>
+            <p>Et harum quidem rerum facilis est et expedita distinctio.</p>
         `
     },
 ]

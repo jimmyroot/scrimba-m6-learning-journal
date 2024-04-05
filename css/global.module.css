@@ -1,8 +1,8 @@
 .highlight {
-    background-color: var(--highlight-dark);
+    background-color: var(--primary);
     color: var(--accent-light);
     display: inline;
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
-    box-shadow: 10px 0 0 var(--highlight-dark), -10px 0 0 var(--highlight-dark);
+    box-shadow: 10px 0 0 var(--primary), -10px 0 0 var(--primary);
 }

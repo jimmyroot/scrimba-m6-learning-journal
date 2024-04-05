@@ -99,7 +99,8 @@
 }
 
 .viewMore {
-    background-color: var(--primary);
+    background-color: var(--primary-alt);
+    color: var(--secondary);
     border: none;
     display: block;
     padding: 0 0.5em;
@@ -116,11 +117,12 @@
     &:hover {
         background-color: var(--secondary);
         text-decoration: none;
-        color: var(--primary);
+        color: var(--accent-light);
     }
 
     &:active {
         background-color: var(--accent);
+        color: var(--secondary);
     }
 
     @media (min-width: 1024px) {

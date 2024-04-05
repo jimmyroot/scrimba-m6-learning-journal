@@ -8,7 +8,7 @@
     --accent: #8447FF;
     --accent-alt: #d0b9ff; */
 
-    --primary: #E5EDF8;
+    /* --primary: #E5EDF8;
     --primary-alt: #f1f6fd;
     --secondary: #0f1844;
     --secondary-alt: #e8d6cb;
@@ -16,6 +16,17 @@
     --accent: #1566ea;
     --accent-light: #e3eeff;
     --accent-alt: #ff003c;
+    --highlight-dark: #262e49; */
+
+    --primary: #2A1F3A;
+    --primary-alt: #F8F3FF;
+    --secondary: #003027;
+    --secondary-alt: #e8d6cb;
+    --tertiary: #EAFFFD;
+    --accent: #00ffc8;
+    --accent-light: #e3fff9;
+    --accent-alt: #00ffc8;
+    --title-header: #FFFFFF;
     --highlight-dark: #262e49;
     --br: 5px;
     

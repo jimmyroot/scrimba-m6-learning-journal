@@ -22,7 +22,7 @@ const Footer = () => {
     // Render functions
     const render = () => {
         let html = `
-          <p class="${styles.bold}">My learning Journal</p>
+          <p class="${styles.bold}">Tales from the Infinite Loop</p>
           <p>Copyright ©2024</p>
         `
         return html
