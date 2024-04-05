@@ -55,6 +55,10 @@ const Header = () => {
                 </div>
                 <div class="${styles.menu}">
                     <div class="${styles.hidden}" id="nav-wrapper">
+
+                        <button class="${styles.close}" data-type="hide">
+                                <i class='bx bx-x bx-lg'></i>
+                        </button>
                     
                         <img class="${styles.burgerLogo}" src="${logoURL}">
 
@@ -64,9 +68,6 @@ const Header = () => {
                             <li><a href="/about" data-type="navigate">About Me</a></li>
                         </ul>
 
-                        <button class="${styles.close}" data-type="hide">
-                                <i class='bx bx-x bx-lg'></i>
-                        </button>    
                     </div>
 
                     <button class="${styles.burger}" id="div-burger" data-type="show">

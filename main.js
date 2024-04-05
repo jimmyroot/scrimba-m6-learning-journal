@@ -13,10 +13,10 @@ import { router } from './app/router'
     router.registerRouterWithBrowserNavigation()
 })()
 
-// Todo 1: burger menu close button
-// Todo 2: link color on my work page
-// Todo 3: weird line above featured image at smaller screen size
-// Todo 4: Burger menu color
-// Todo 5: nav link active behaviour in responsive test mode
-// Todo 6: Test other browsers (safari/edge/firefox)
-// Todo 7: Submit the bastard
+// [x] Todo 1: burger menu close button
+// [x] Todo 2: link color on my work page
+// [x] Todo 3: weird line above featured image at smaller screen size
+// [x] Todo 4: Burger menu color
+// [x] Todo 5: nav link active behaviour in responsive test mode
+// [ ] Todo 6: Test other browsers (safari/edge/firefox)
+// [ ] Todo 7: Submit the bastard

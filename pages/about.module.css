@@ -62,7 +62,7 @@
     
         &:active {
             color: var(--secondary);
-            background-color: var(--accent-alt);
+            background-color: var(--accent);
         }
     }
 

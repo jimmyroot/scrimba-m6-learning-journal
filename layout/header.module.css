@@ -93,7 +93,7 @@
             padding: 0;
             
             li .selected {
-                border-left: 3px solid var(--accent-alt);
+                border-left: 3px solid var(--accent);
                 pointer-events: none;
             }
 
@@ -110,14 +110,17 @@
                 text-transform: uppercase;
                 text-decoration: none;
                 padding: 0 0.3em;
-
-                &:hover {
-                    background-color: var(--accent-light);
-                    color: var(--primary);
+                
+                @media (hover: hover) {
+                    &:hover {
+                        background-color: var(--accent-light);
+                        color: var(--secondary);
+                    }
                 }
 
                 &:active {
-                    background-color: var(--accent-alt);
+                    background-color: var(--accent);
+                    color: var(--primary);                
                 }
             }
         }
@@ -127,13 +130,16 @@
         }
 
         .close {
-            display: none;
+            display: block;
+            color: var(--accent-light);
             border: none;
             background: none;
             position: absolute;
-            top: 0.4em;
-            right: 1em;
+            top: .4em;
+            right: .4em;
             cursor: pointer;
+            color: var(--);
+            z-index: 11;
     
             &:active {
                 transform: scale(0.9);
@@ -146,6 +152,7 @@
     }    
 
     .burger {
+        color: var(--accent-light);
         display: flex;
         border: none;
         background: none;
@@ -222,12 +229,16 @@
 
                     li .selected {
                         border-left: 0;
-                        border-bottom: 3px solid var(--accent-alt);
+                        border-bottom: 3px solid var(--accent);
                         pointer-events: none;
                     }
                 }
 
                 .burgerLogo { 
+                    display: none;
+                }
+
+                .close {
                     display: none;
                 }
             }
