@@ -23,7 +23,7 @@ export const posts = [
         intro: `
             After completing the first module of Scrimba's FrontEnd Development Career Path,
             I knew I had to jump in and see what the full Bootcamp experience had to offer. I haven't
-            been disappointed! Read on to find out why.
+            been disappointed! Read on to find out why.f
         `,
         content: `
             <h2>First, some history</h2>
@@ -290,6 +290,7 @@ export const portfolio = [
             'CSS',
             'JavaScript'
         ],
+        url: 'https://voluble-gaufre-9b87ff.netlify.app/',
         imgURL: imgUrlInvoiceCreator
     },
     {
@@ -306,6 +307,7 @@ export const portfolio = [
             'CSS',
             'JavaScript'
         ],
+        url: 'https://mellow-sorbet-f835b8.netlify.app/',
         imgURL: imgUrlChoreslist
     },
     {
@@ -321,6 +323,7 @@ export const portfolio = [
             'HTML',
             'CSS',
         ],
+        url: 'https://luxury-pavlova-2d07f7.netlify.app/',
         imgURL: imgUrlBestBank
     },
     {
@@ -337,6 +340,7 @@ export const portfolio = [
             'CSS',
             'JavaScript'
         ],
+        url: 'https://clinquant-bombolone-4ec7e0.netlify.app/',
         imgURL: imgUrlUnitConverter
     }
 ]
