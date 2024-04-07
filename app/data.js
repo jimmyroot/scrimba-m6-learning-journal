@@ -4,6 +4,7 @@ import imgUrlCSSModules from '../assets/images/modules.png'
 import imgUrlMotivation from '../assets/images/motivation.png'
 import imgUrlModularJs from '../assets/images/modularjs.png'
 import imgUrlExtensions from '../assets/images/extensions.png'
+import imgUrlJournal from '../assets/images/learningjournal.png'
 import imgUrlArrays from '../assets/images/arrays.png'
 import imgUrlRestaurantApp from '../assets/images/coolbeans.png'
 import imgUrlInvoiceCreator from '../assets/images/invoicecreator.png'
@@ -68,9 +69,9 @@ export const posts = [
         imgAltTxt: 'Some alt text',
         date: new Date(2024, 2, 9),
         intro: `
-            In my last post, I told you a little bit about why Scrimba is so awesome.
+            In my last post, I talked a little about why Scrimba and what makes it so awesome.
             Let's dive in a little bit deeper and talk about why I believe it's the 
-            best online learning platform.
+            one of the best online learning experienced out there.
         `,  
         content: `
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
@@ -80,6 +81,7 @@ export const posts = [
             reprehenderit in voluptate velit esse cillum dolore eu fugiat 
             nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
             sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h2>Nemo enim ipsam voluptatem quia voluptas</h2>
             <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
             accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae 
             ab illo inventore veritatis et quasi architecto beatae vitae dicta
@@ -113,6 +115,7 @@ export const posts = [
             reprehenderit in voluptate velit esse cillum dolore eu fugiat 
             nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
             sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h2>Nemo enim ipsam voluptatem quia voluptas</h2>
             <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
             accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae 
             ab illo inventore veritatis et quasi architecto beatae vitae dicta
@@ -145,6 +148,7 @@ export const posts = [
             reprehenderit in voluptate velit esse cillum dolore eu fugiat 
             nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
             sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h2>Nemo enim ipsam voluptatem quia voluptas</h2>
             <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
             accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae 
             ab illo inventore veritatis et quasi architecto beatae vitae dicta
@@ -178,6 +182,7 @@ export const posts = [
             reprehenderit in voluptate velit esse cillum dolore eu fugiat 
             nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
             sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h2>Nemo enim ipsam voluptatem quia voluptas</h2>
             <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
             accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae 
             ab illo inventore veritatis et quasi architecto beatae vitae dicta
@@ -211,6 +216,7 @@ export const posts = [
             reprehenderit in voluptate velit esse cillum dolore eu fugiat 
             nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
             sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h2>Nemo enim ipsam voluptatem quia voluptas</h2>
             <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
             accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae 
             ab illo inventore veritatis et quasi architecto beatae vitae dicta
@@ -244,6 +250,7 @@ export const posts = [
             reprehenderit in voluptate velit esse cillum dolore eu fugiat 
             nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
             sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h2>Nemo enim ipsam voluptatem quia voluptas</h2>
             <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
             accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae 
             ab illo inventore veritatis et quasi architecto beatae vitae dicta
@@ -259,6 +266,24 @@ export const posts = [
 ]
 
 export const portfolio = [
+    {
+        title: `Learning Journal`,
+        subtitle: `A simple, responsive, blog design driven by media queries. Built using a combination
+        of grid and flexbox — you're already on it!`,
+        description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+        nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+        sunt in culpa qui officia deserunt mollit anim id est laborum.</p>`,
+        stack: [
+            'HTML',
+            'CSS',
+            'JavaScript'
+        ],
+        url: 'https://heartfelt-sunshine-f4fd8e.netlify.app/',
+        imgURL: imgUrlJournal
+    },
     {
         title: `Cool Beans`,
         subtitle: `An online ordering service app mockup`,

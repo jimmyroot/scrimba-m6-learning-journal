@@ -41,7 +41,7 @@
         }
 
         a {
-            color: white;
+            color: var(--accent-light);
             text-decoration: none;
 
             &:hover {

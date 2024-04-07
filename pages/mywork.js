@@ -35,7 +35,8 @@ const MyWork = () => {
                     
                         <h2>${title}</h2>
                         
-                        <p class="${styles.subtitle}">${subtitle} — <a href="${url}">check it out!</a></p>
+                        <p class="${styles.subtitle}">${subtitle} 
+                        ${ title === 'Learning Journal' ? `` : `— <a href=${url} target="_blank">check it out!</a>`}</p>
                         
                         ${description}
                         
