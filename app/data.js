@@ -5,7 +5,7 @@ import imgUrlMotivation from '../assets/images/motivation.png'
 import imgUrlModularJs from '../assets/images/modularjs.png'
 import imgUrlExtensions from '../assets/images/extensions.png'
 import imgUrlArrays from '../assets/images/arrays.png'
-import imgUrlRestaurantApp from '../assets/images/restaurant-ordering.png'
+import imgUrlRestaurantApp from '../assets/images/coolbeans.png'
 import imgUrlInvoiceCreator from '../assets/images/invoicecreator.png'
 import imgUrlChoreslist from '../assets/images/choreslist.png'
 import imgUrlBestBank from '../assets/images/bestbank.png'
@@ -23,7 +23,7 @@ export const posts = [
         intro: `
             After completing the first module of Scrimba's FrontEnd Development Career Path,
             I knew I had to jump in and see what the full Bootcamp experience had to offer. I haven't
-            been disappointed! Read on to find out why.f
+            been disappointed! Read on to find out why.
         `,
         content: `
             <h2>First, some history</h2>
