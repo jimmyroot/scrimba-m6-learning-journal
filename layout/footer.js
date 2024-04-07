@@ -2,22 +2,24 @@ import styles from './footer.module.css'
 
 const Footer = () => {
     
-    const registerEventListeners = () => {
-        node.addEventListener('click', e => {
-            handleClick(e)
-        })
-    }
+    // Uncomment the below if we want to add buttons to the footer in future
+
+    // const registerEventListeners = () => {
+    //     node.addEventListener('click', e => {
+    //         handleClick(e)
+    //     })
+    // }
     
-    const handleClick = e => {
+    // const handleClick = e => {
 
-        // some event handlers as object literals
-        const execute = {
+    //     // some event handlers as object literals
+    //     const execute = {
            
-        }
+    //     }
 
-        const { type } = e.target.dataset
-        if (type) execute[type]()
-    }
+    //     const { type } = e.target.dataset
+    //     if (type) execute[type]()
+    // }
 
     // Render functions
     const render = () => {
@@ -37,15 +39,13 @@ const Footer = () => {
         return node
     }
 
-    // Init the node that will be returned by this module
     const node = document.createElement('footer')
     node.className += styles.footer
 
     return {
         get,
-        registerEventListeners
+        // registerEventListeners
     }
-
 }
 
 export const footer = Footer()

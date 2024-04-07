@@ -4,6 +4,7 @@ import avatarURL from '../assets/images/user-avatar.png'
 
 const About = () => {
 
+    // Call to add relevant event listeners to about page after node rendered
     const registerEventListeners = () => {
         node.addEventListener('click', e => {
             handleClick(e)

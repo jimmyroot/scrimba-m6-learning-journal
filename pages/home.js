@@ -14,6 +14,10 @@ const Home = () => {
         node.addEventListener('click', e => {
             handleClick(e)
         })
+
+        // Media queries to refresh the page at the specified breakpoints. 
+        // The page will automatically render more or less recent posts at 
+        // small, medium, large sizes
         window.matchMedia('(min-width: 640px)').addEventListener('change', () => {
             refresh()
         })
@@ -22,6 +26,7 @@ const Home = () => {
         })
     }
 
+    // Click handlers
     const handleClick = e => {
         const execute = {
             navigateToPost: () => {
@@ -46,6 +51,7 @@ const Home = () => {
     const render = () => {
         const featuredPost = renderFeaturedPost(featuredPostId)
 
+        // Set config for getPosts, render all posts if 'View more' is active
         const options = viewMore ? {
             qty: post.getTotalPostsInDb(),
             postIdToExclude: featuredPostId,
@@ -59,42 +65,39 @@ const Home = () => {
         }
         
         const recentPosts = post.getPosts(options)
-
         const btnViewMore = renderViewMoreBtn()
 
+        // Instead of just html we return an array with the nodes we will render
         return [featuredPost, recentPosts, btnViewMore]
     }
 
     const renderFeaturedPost = postId => {
-
         const featuredPost = posts.find(post => post.id === postId)
         const { id, author, title, path, imgURL, imgAltTxt, date, intro } = featuredPost
-        const el = document.createElement('section')
+        const section = document.createElement('section')
 
-        el.classList.add(styles.featured)
-        el.innerHTML = `
+        section.classList.add(styles.featured)
+        section.innerHTML = `
             <img src="${imgURL}" alt="${imgAltTxt}">
             <div>
-
-                <p class="${styles.date}"><span class="${global.highlight}">
+                <p class="${styles.date}">
+                    <span class="${global.highlight}">
                         ${helper.dateFormatted(date)} by 
                         <a href="/about">
                             ${author}
                         </a>
-                    </span<
+                    </span>
                 </p>
-                
                 <h1 class="${styles.featuredHeader}">
                     <a href="${path}" data-type="navigateToPost" data-id="${id}">
                         <span class="${global.highlight}">${title}</span>
                     </a>
                 </h1>
-
                 <p><span class="${global.highlight}">${intro}</span></p>
             </div>
         `
 
-        return el
+        return section
     }
 
     const renderViewMoreBtn = () => {
@@ -105,7 +108,10 @@ const Home = () => {
         return btn
     }
 
+    // Figures out how many posts to render based on window size
     const getNumberOfPostsToRender = () => {
+        // Here you can configure how many posts you'd like to render
+        // for each window size
         const getNumberOfPostsFor = {
             'small': () => {
                 return 3
@@ -118,11 +124,13 @@ const Home = () => {
             }
         }
         
+        // Pass window width to getRenderSize to determine size
         const renderSize = helper.getRenderSize(window.innerWidth)
         return getNumberOfPostsFor[renderSize]()
     }
 
     const refresh = () => {
+        // Update number of posts to render each time we refresh page
         numberOfPostsToRender = getNumberOfPostsToRender()
         node.replaceChildren(...render())
     }
@@ -135,7 +143,7 @@ const Home = () => {
 
     // Initialization stuff
     const node = document.createElement('div')
-    node.classList.add(styles.home)
+    node.className += (styles.home)
     
     const featuredPostId = 1
     let viewMore = false
