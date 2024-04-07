@@ -6,7 +6,7 @@ import { header } from '../layout/header'
 
 const Router = () => {
 
-    // Init
+    // Each route's contents is an array with one or more DOM nodes
     const routes = {
         '/': {
             linkLabel: 'Home',
@@ -24,7 +24,7 @@ const Router = () => {
             content: ``
         },
         '/unknown': {
-            content: (() => {
+            content: [(() => {
                 const node = document.createElement('div')
                 node.innerHTML = `
                     <h1>Well, this is embarassing.</h1>
@@ -34,7 +34,7 @@ const Router = () => {
                     </p>
                 `
                 return node
-            })()
+            })()]
         }
     }
 

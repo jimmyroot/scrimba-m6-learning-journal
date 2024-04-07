@@ -1,27 +1,10 @@
 :root {
     font-family: 'Source Sans 3', sans-serif;
-    /* --primary: #e9e9e9;
-    --primary-alt: #e0e0e0;
-    --secondary: #090909;
-    --secondary-alt: #999999;
-    --tertiary: #dddddd;
-    --accent: #8447FF;
-    --accent-alt: #d0b9ff; */
-
-    /* --primary: #E5EDF8;
-    --primary-alt: #f1f6fd;
-    --secondary: #0f1844;
-    --secondary-alt: #e8d6cb;
-    --tertiary: #F7FBFF;
-    --accent: #1566ea;
-    --accent-light: #e3eeff;
-    --accent-alt: #ff003c;
-    --highlight-dark: #262e49; */
 
     --primary: #2A1F3A;
     --primary-alt: #F8F3FF;
     --secondary: #003027;
-    --secondary-alt: #  ;
+    --secondary-alt: #e8d6cb;
     --tertiary: #EAFFFD;
     --accent: #00ffc8;
     --accent-light: #e3fff9;
