@@ -19,7 +19,7 @@ export const posts = [
         title: 'My new journey as a bootcamp student',
         path: `/my-new-journey-as-a-bootcamp-student`,
         imgURL: imgUrlDesk,
-        imgAltTxt: 'Some descriptive text',
+        imgAltTxt: 'A picture of my desk, with my system logged in and showing some code on the screen',
         date: new Date(2024, 2, 10),
         intro: `
             After completing the first module of Scrimba's FrontEnd Development Career Path,
@@ -66,7 +66,7 @@ export const posts = [
         title: 'So, why Scrimba?',
         path: `/so-why-scrimba`,
         imgURL: imgUrlScrimba,
-        imgAltTxt: 'Some alt text',
+        imgAltTxt: 'An image of the hand drawn Scrimba characters',
         date: new Date(2024, 2, 9),
         intro: `
             In my last post, I talked a little about why Scrimba and what makes it so awesome.
@@ -100,7 +100,7 @@ export const posts = [
         title: 'An introduction to CSS modules',
         path: `/an-introduction-to-css-modules`,
         imgURL: imgUrlCSSModules,
-        imgAltTxt: 'Some descriptive text',
+        imgAltTxt: 'An image of people building with lego building blocks',
         date: new Date(2024, 2, 8),
         intro: `
             I was recently intrigued by an article I read recently about CSS
@@ -134,7 +134,7 @@ export const posts = [
         title: 'Boosting motivation',
         path: `/boosting-motivation`,
         imgURL: imgUrlMotivation,
-        imgAltTxt: 'Some descriptive text',
+        imgAltTxt: 'An image of someone celebrating a personal win',
         date: new Date(2024, 2, 7),
         intro: `
             If you're anything like me, motivation can be a daily struggle. Here's some
@@ -167,7 +167,7 @@ export const posts = [
         title: 'My experiences with modular JavaScript',
         path: `/my-experiences-with-modular-javascript`,
         imgURL: imgUrlModularJs,
-        imgAltTxt: 'Some descriptive text',
+        imgAltTxt: 'An image of vscode open with several javascript files on screen',
         date: new Date(2024, 2, 6),
         intro: `
             As you progress, it won't be long before your .js files start to get pretty
@@ -201,7 +201,7 @@ export const posts = [
         title: 'My favorite VS Code extensions and themes',
         path: `/my-favorite-vs-code-extensions-and-themes`,
         imgURL: imgUrlExtensions,
-        imgAltTxt: 'Some descriptive text',
+        imgAltTxt: 'A meme showing that VScode with extensions is far more powerful',
         date: new Date(2024, 2, 5),
         intro: `
             Who doesn't love a good theme? But that's just the start of VSCode 
@@ -235,7 +235,7 @@ export const posts = [
         title: `Let's talk about array methods`,
         path: `/lets-talk-about-array-methods`,
         imgURL: imgUrlArrays,
-        imgAltTxt: 'Some descriptive text',
+        imgAltTxt: 'Some code is shown, with several array methods',
         date: new Date(2024, 2, 20),
         intro: `
             Every time I'm trying to do something new with an array, it nearly always

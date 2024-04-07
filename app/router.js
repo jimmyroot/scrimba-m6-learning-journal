@@ -38,23 +38,27 @@ const Router = () => {
         }
     }
 
+    // Register render function with popstate (so the back button works in browser)
     const registerRouterWithBrowserNavigation = () => {
         window.onpopstate = e => render(location.pathname)
     }
 
+    // Default page loader
     const renderStartPage = () => {
         render(location.pathname)
     }
 
+    // Navigate function, sets route, adds to history stack, then renders
     const navigate = e => {
         const route = e.target.pathname
         history.pushState({}, "", route)
         render(route)
     }
 
+    // Navigate to an individual post
     const navigateToPost = (e) => {
     
-        // routes['/post'].content = post.get(id)
+        // Build the path, set history, render, scroll back to top
         const route = `/post${e.target.pathname}`
         history.pushState({}, "", route)
         render(route)
@@ -64,6 +68,8 @@ const Router = () => {
         })
     }
 
+    // Render the route, basically takes the content from the 'routes' object and inserts
+    // it into the #app container
     const render = route => {
 
         // Remove any trailing slash (unless route is homepage)
@@ -74,7 +80,7 @@ const Router = () => {
         // a blog post was requested directly
         const path = route.split('/')   
 
-        // Check if we're trying to access a post
+        // Check if we're trying to access a post, if so update the contents of the post route
         if (path[1] === 'post') {
             // check if the path contains a sub URL
             const postPath = path[2]
@@ -82,7 +88,8 @@ const Router = () => {
             // false if it can't find the post
             let postToRender = post.getPostByPath(postPath)
 
-            // if post was retrieved successfully, append recent posts 
+            // if post was retrieved successfully, get some recent posts so we can render
+            // them under the post
             if (postToRender) {
                 const options = {
                     qty: 3,
@@ -90,9 +97,7 @@ const Router = () => {
                     showHeader: true,
                     randomize: true
                 }
-                // console.log(options)
                 const recentPostsSection = post.getPosts(options)
-
                 routes['/post'].content = [postToRender, recentPostsSection]
             }
 
@@ -101,7 +106,8 @@ const Router = () => {
             routes['/post'].content ? route = '/post' : route = '/unknown'
         } 
         
-        // Try to render the given path, if anything goes wrong set route to unknown and go...
+        // Try to render the given path, if anything goes wrong set route to unknown and render, will show
+        // a fake '404' style page
         try {
             const nodesToRender = routes[route].content
             document.querySelector('#app').replaceChildren(...nodesToRender)
@@ -110,6 +116,8 @@ const Router = () => {
             document.querySelector('#app').replaceChildren(routes['/unknown'].content)
         }
 
+        // Call navUpdate so navigation selection indicator is accurate (should show nothing selected when
+        // a post is being viewed)
         header.navUpdate()
     }
 

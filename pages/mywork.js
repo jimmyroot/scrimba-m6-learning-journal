@@ -9,7 +9,7 @@ const MyWork = () => {
     const render = () => {
         let html = `
             <header class="${styles.header}">
-                <img src="${imgUrlKb}" alt="Image of a developer's desk">
+                <img src="${imgUrlKb}" alt="A picture of a mechanical keyboard and a laptop, zoomed in close">
                 <div>
                     <h1><span class="${global.highlight}">Some of my work</span></h1>
                     <p><span class="${global.highlight}">
@@ -21,7 +21,6 @@ const MyWork = () => {
             ${renderPortfolio()}
             </section>
         `
-
         return html
     }
 
@@ -45,7 +44,7 @@ const MyWork = () => {
                             `).join('')}
                         </div>
                     </div>
-                    <img src="${imgURL}">
+                    <img src="${imgURL}" alt="An image of the ${title} project">
                 </div>
             `
         }).join('')
