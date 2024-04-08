@@ -103,8 +103,8 @@ export const posts = [
         imgAltTxt: 'An image of people building with lego building blocks',
         date: new Date(2024, 2, 8),
         intro: `
-            I was recently intrigued by an article I read recently about CSS
-            modules and decided to dive in the deep end...here's what I learned.
+            I was intrigued by an article I read recently about CSS
+            modules and decided to dive in to the deep end...here's what I learned.
             Let's see if I can convince you to try them out! 
         `,
         content: `
