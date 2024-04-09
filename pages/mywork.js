@@ -38,7 +38,7 @@ const MyWork = () => {
                             ${ title === 'Learning Journal' ? `` : `— <a href=${url} target="_blank">check it out!</a>`}
                         </p>
                         ${description}
-                        <div class="${styles.stack}">
+                        <div class="${styles.techStack}">
                             ${stack.map(tech => `
                                 <div>${tech}</div>
                             `).join('')}

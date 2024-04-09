@@ -1,3 +1,7 @@
+/* ------------------------------
+Site wide reset and basic styles
+------------------------------ */
+
 :root {
     font-family: 'Source Sans 3', sans-serif;
 
@@ -26,15 +30,15 @@
         -15px 0.1px 22.5px hsl(var(--shadow-color) / 0.06);
     --shadow-elevation-high:
         -1px 0px 1.5px hsl(var(--shadow-color) / 0),
-        -4.7px 0px 7.1px hsl(var(--shadow-color) / 0.01),
-        -7.9px 0.1px 11.9px hsl(var(--shadow-color) / 0.01),
-        -11px 0.1px 16.5px hsl(var(--shadow-color) / 0.01),
-        -14.4px 0.1px 21.6px hsl(var(--shadow-color) / 0.02),
-        -18.5px 0.2px 27.8px hsl(var(--shadow-color) / 0.03),
-        -23.7px 0.2px 35.6px hsl(var(--shadow-color) / 0.04),
-        -30.4px 0.3px 45.6px hsl(var(--shadow-color) / 0.04),
-        -39px 0.4px 58.5px hsl(var(--shadow-color) / 0.04),
-        -50px 0.5px 75px hsl(var(--shadow-color) / 0.03);
+        -4.7px 0px 7.1px hsl(var(--shadow-color) / 0.02),
+        -7.9px 0.1px 11.9px hsl(var(--shadow-color) / 0.02),
+        -11px 0.1px 16.5px hsl(var(--shadow-color) / 0.02),
+        -14.4px 0.1px 21.6px hsl(var(--shadow-color) / 0.03),
+        -18.5px 0.2px 27.8px hsl(var(--shadow-color) / 0.04),
+        -23.7px 0.2px 35.6px hsl(var(--shadow-color) / 0.05),
+        -30.4px 0.3px 45.6px hsl(var(--shadow-color) / 0.06),
+        -39px 0.4px 58.5px hsl(var(--shadow-color) / 0.05),
+        -50px 0.5px 75px hsl(var(--shadow-color) / 0.04);
 }
 
 *, *::before, *::after {

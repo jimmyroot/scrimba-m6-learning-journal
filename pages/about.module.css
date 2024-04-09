@@ -1,3 +1,7 @@
+/* -------------------------
+Styles for the 'about' page
+------------------------- */
+
 .about {
     composes: container from '../css/styles.css';
     display: flex;
@@ -54,6 +58,8 @@
         font-weight: 400;
         line-height: 1.5;
         
+        /* Wrapped hover in 'hover' query to prevent sticky 
+        hover class on touch screen devices */
         @media (hover: hover) {
             &:hover {
                 background-color: var(--secondary);

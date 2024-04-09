@@ -1,3 +1,12 @@
+/* --------------------------------------------------------------------------------
+Styles for the post related elements. Here we have:
+    1. styles for an individual post (e.g. what you see when navigating via a link 
+       to a post)
+    2. Styles for the post previews you see when a page renders 'recent posts', e.g.
+       the bottom of the homepage, and also underneath a post in the Recent Posts 
+       section
+-------------------------------------------------------------------------------- */
+
 .post {
     composes: container from '../css/styles.css';
     padding-top: 1em;
@@ -22,18 +31,19 @@
         margin: 1em 0 1em 0;
     }
 
-    .date {
-        grid-area: date;
-        font-size: 1rem;
-    }
-
+    
     a {
         text-decoration: none;
         color: var(--secondary);
-
+        
         &:hover {
             text-decoration: underline;
         }
+    }
+    
+    .date {
+        grid-area: date;
+        font-size: 1rem;
     }
 
     .postInner {
@@ -44,6 +54,7 @@
         }
     }
 
+    /* Back button */
     .back {
         background-color: var(--primary-alt);
         color: var(--secondary);
@@ -69,6 +80,7 @@
         }
     }
  
+    /* Media queries for individual post */
     @media (min-width: 640px) {
         & {
             
@@ -116,7 +128,7 @@
     }
 }
 
-/* Recent posts responsive grid layout, used anywhere that shows recent posts */
+/* Recent posts responsive grid layout, used everywhere that shows recent posts */
 .recentPosts {
     display: flex;
     flex-direction: column;
@@ -133,11 +145,14 @@
         grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
     }
 
+    /* Not much to do with media queries as the above grid layout handles
+    everything quite elegantly. Just add some extra padding after 640px */
     @media (min-width: 640px) {
         padding: 0 1em;
     }
 }
 
+/* Post 'thumbnails' in recent posts */
 .recentPost {
     display: flex;
     flex-direction: column;
