@@ -20,7 +20,7 @@ const Post = () => {
         const execute = {
             back: () => {
                 e.preventDefault()
-                window.history.go(-1)
+                window.history.go(-1)   
             },
             navigateToPost: () => {
                 e.preventDefault()

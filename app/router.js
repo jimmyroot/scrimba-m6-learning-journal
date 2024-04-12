@@ -48,20 +48,17 @@ const Router = () => {
         render(location.pathname)
     }
 
-    // Navigate function, sets route, adds to history stack, then renders
+    // Navigate function, sets route, set location (fires popstate)
     const navigate = e => {
         const route = e.target.pathname
-        history.pushState({}, "", route)
-        render(route)
+        window.location = route
     }
 
     // Navigate to an individual post
-    const navigateToPost = (e) => {
-    
-        // Build the path, set history, render, scroll back to top
+    const navigateToPost = e => {
+        // Build the path, set route, set location (fires popstate), scroll back to top
         const route = `/post${e.target.pathname}`
-        history.pushState({}, "", route)
-        render(route)
+        window.location = route
         window.scrollTo({
             top: 0,
             behaviour: 'smooth'
@@ -71,7 +68,6 @@ const Router = () => {
     // Render the route, basically takes the content from the 'routes' object and inserts
     // it into the #app container
     const render = route => {
-
         // Remove any trailing slash (unless route is homepage)
         if (route != '/') route = route.replace(/\/$/, "")
         // console.log(route)
