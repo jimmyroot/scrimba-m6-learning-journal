@@ -51,7 +51,9 @@ const Router = () => {
     // Navigate function, sets route, set location (fires popstate)
     const navigate = e => {
         const route = e.target.pathname
-        window.location = route
+        window.location = route || '/'
+
+        
     }
 
     // Navigate to an individual post

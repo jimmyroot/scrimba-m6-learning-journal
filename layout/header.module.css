@@ -52,6 +52,7 @@ Future improvements: Move all 'nav' related styles to their own module
         display: block;
         width: 50px;
         aspect-ratio: 1/1;
+        cursor: pointer;
     }
     
     h1 {
