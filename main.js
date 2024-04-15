@@ -12,12 +12,3 @@ import { router } from './app/router'
     router.renderStartPage()
     router.registerRouterWithBrowserNavigation()
 })()
-
-// Last few ToDos
-// [x] Todo 1: burger menu close button
-// [x] Todo 2: link color on my work page
-// [x] Todo 3: weird line above featured image at smaller screen size
-// [x] Todo 4: Burger menu color
-// [x] Todo 5: nav link active behaviour in responsive test mode
-// [x] Todo 6: Test other browsers (safari/edge/firefox)
-// [x] Todo 7: Finish adding comments

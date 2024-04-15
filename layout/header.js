@@ -18,7 +18,6 @@ const Header = () => {
                 }
             }
         })
-
     }
     
     const handleClick = e => {
@@ -28,13 +27,13 @@ const Header = () => {
             navigate: () => {
                 e.preventDefault()
                 router.navigate(e)
-                navHide()
+                navToggle()
             },
             show: () => {
-                navShow()
+                navToggle()
             },
             hide: () => {
-                navHide()
+                navToggle()
             }
         }
 
@@ -78,13 +77,13 @@ const Header = () => {
     }
 
     // Hide/show nav, used only at smaller screen sizes
-    const navShow = () => {
-        document.querySelector(`#nav-wrapper`).classList.remove(styles.hidden)
+    const navToggle = () => {
+        document.querySelector(`#nav-wrapper`).classList.toggle(styles.hidden)
     }
 
-    const navHide = ()  => {
-        document.querySelector(`#nav-wrapper`).classList.add(styles.hidden)
-    }
+    // const navHide = ()  => {
+    //     document.querySelector(`#nav-wrapper`).classList.add(styles.hidden)
+    // }
 
     // This function highlights the relevant nav option depending on what page is currently loaded
     // We can call it at any time, but usually used after a page refresh
