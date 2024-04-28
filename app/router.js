@@ -38,9 +38,9 @@ const Router = () => {
         }
     }
 
-    // Register render function with popstate (so the back button works in browser)
+    // Register render function with popstate, so the page renders on popstate (back/forward/init load)
     const registerRouterWithBrowserNavigation = () => {
-        window.onpopstate = e => render(location.pathname)
+        window.onpopstate = () => render(location.pathname)
     }
 
     // Default page loader
@@ -52,8 +52,6 @@ const Router = () => {
     const navigate = e => {
         const route = e.target.pathname
         window.location = route || '/'
-
-        
     }
 
     // Navigate to an individual post

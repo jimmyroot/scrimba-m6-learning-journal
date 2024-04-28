@@ -47,7 +47,7 @@ const Header = () => {
             <div class="${styles.container}">
                 <div class="${styles.logo}">
                     <img src="${logoURL}" alt="The blog's logo, a mint green infinity glyph" data-type="navigate">
-                    <h1>Tales from the Infinite Loop</h1>
+                    <h1 data-type="navigate">Tales from the Infinite Loop</h1>
                 </div>
                 <div class="${styles.menu}">
                     <div class="${styles.hidden}" id="nav-wrapper">

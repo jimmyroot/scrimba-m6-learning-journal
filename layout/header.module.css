@@ -60,6 +60,7 @@ Future improvements: Move all 'nav' related styles to their own module
         font-size: 1.2rem;
         margin-left: 0.2em;
         color: var(--title-header);
+        cursor: pointer;
     }
 
     @media (min-width: 640px) {
