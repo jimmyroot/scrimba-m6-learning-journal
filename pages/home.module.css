@@ -1,3 +1,9 @@
+/* --------------------------------------------------------------------------------
+Styles for the 'home' page. These include styles for the featured post, but note that
+the styles for the 'recent posts' at the bottom of the homepage do not appear here. 
+Instead they can be found in the posts css module at './post.module.css'
+-------------------------------------------------------------------------------- */
+
 .home {
     width: 100%;
     display: flex;

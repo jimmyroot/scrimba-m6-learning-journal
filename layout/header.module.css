@@ -1,3 +1,11 @@
+/* --------------------------------------------------------------------------------
+Header styles. This file includes all the CSS for the header and navigation,
+including the alternative navigation that opens when opening the 'hamburger' menu
+at smaller screen sizes.
+
+Future improvements: Move all 'nav' related styles to their own module
+-------------------------------------------------------------------------------- */
+
 .header {
     background-color: var(--primary-alt);
     width: 100%;
@@ -44,15 +52,15 @@
         display: block;
         width: 50px;
         aspect-ratio: 1/1;
+        cursor: pointer;
     }
     
     h1 {
-        /* font-weight: 400; */
         display: inline;
         font-size: 1.2rem;
         margin-left: 0.2em;
         color: var(--title-header);
-        /* text-shadow: rgba(0,255,255,1) 0px 0px 5px; */
+        cursor: pointer;
     }
 
     @media (min-width: 640px) {
@@ -111,6 +119,9 @@
                 text-decoration: none;
                 padding: 0 0.3em;
                 
+                /* Using the hover media query here to prevent 'sticky' hover class
+                when accessing the site via a touch screen device or any other device
+                that doesn't have a cursor for true hover */
                 @media (hover: hover) {
                     &:hover {
                         background-color: var(--accent-light);
@@ -164,7 +175,7 @@
         }
     }
 
-    /* NAV MEDIA QUERIES */
+    /* Bulk of the menu media queries are here */
     @media (max-width: 480px) {
         & {
             div {

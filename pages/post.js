@@ -2,23 +2,25 @@ import { posts } from '../app/data'
 import { router } from '../app/router.js'
 import * as helper from '../app/helper'
 import styles from './post.module.css'
-import global from './post.module.css'
 
 const Post = () => {
 
+    // Use this to keep track of which post is currently being shown
     let renderedPostId = null
 
+    // Call this to add event listener to the page
     const registerEventListeners = () => {
         node.addEventListener('click', e => {
             handleClick(e)
         })
     }
 
+    // Click handlers
     const handleClick = e => {
         const execute = {
             back: () => {
                 e.preventDefault()
-                window.history.go(-1)
+                window.history.go(-1)   
             },
             navigateToPost: () => {
                 e.preventDefault()
@@ -30,12 +32,11 @@ const Post = () => {
         if (type) execute[type]()
     }
 
+    // Render an individual post by it's ID, returns html string
     const render = postId => {
 
         const post = posts.find(post => post.id === +postId)
-
         const { id, author, title, imgURL, imgAltTxt, date, intro, content } = post
-        
         renderedPostId = id
 
         let html = `
@@ -56,20 +57,27 @@ const Post = () => {
         return html
     }
 
-    /// Decided to use an object to pass the arguments for the post functions, as it makes the 
+    // Decided to use an object to pass the arguments for the post functions, as it makes the 
     // purpose of each argument easier to read. Default options are set so we can call getPosts with
     // no arguments and will receive all posts in the DB in return
+    //
+    // This function will return a node containing the posts specified by the options
+    // qty: how many posts do you want? postIdToExclude: don't return this post in the selection (use to excldue the
+    // currently rendered post), showHeader: do you want to show a 'recent posts' header above the node?
+    // randomize: do you want the posts in order, or a random order? 
     const getPosts = (options = {
+
         qty: posts.length,
         postIdToExclude: null,
         showHeader: false,
         randomize: false
+
     }) => {
-        // const postsToRender = posts.filter(post => post.id != exceptPostId)
         const { qty, postIdToExclude, showHeader, randomize } = options
         
         let postsToRender = null
 
+        // if randomize, we use 'getRandomPosts()', if not we use 'getOrderedPosts()'
         if (randomize) {
             const options = {
                 postArr: posts,
@@ -87,32 +95,32 @@ const Post = () => {
             postsToRender = getOrderedPosts(options)
         }
 
-        // console.log(postsToRender)
-
+        // Start building, if showHeader is true we add a header
         let html = showHeader ? `<h2 class="${styles.heading}">Recent Posts</h2><div class="${styles.recentPostsContainer}">` : `<div class="${styles.recentPostsContainer}">`
 
+        // Build the html from the posts returned above
         html += postsToRender.map(post => {
             const { id, author, title, path, imgURL, imgAltTxt, date, intro } = post
-            
-                return `
-                    <div class="${styles.recentPost}">
-                        <img src="${imgURL}" alt="${imgAltTxt}">
-                        <p class="${styles.date}">${helper.dateFormatted(date)} by ${author}</p>
-                        <a href="${path}" data-type="navigateToPost" data-id="${id}">
-                            <h2>${title}</h2>
-                        </a>
-                        <p>${intro}</p>
-                    </div>
-                `
-            
+            return `
+                <div class="${styles.recentPost}">
+                    <img src="${imgURL}" alt="${imgAltTxt}">
+                    <p class="${styles.date}">${helper.dateFormatted(date)} by ${author}</p>
+                    <a href="${path}" data-type="navigateToPost" data-id="${id}">
+                        <h2>${title}</h2>
+                    </a>
+                    <p>${intro}</p>
+                </div>
+            `
         }).join('').concat('</div>')
 
+        // Convert the html string into a DOM node object, as this is what our route render
+        // function needs to work with, in router.js
         const recentPosts = new DOMParser().parseFromString(html, 'text/html').body.children
-
         const recentPostsSection = document.createElement('section')
         recentPostsSection.classList.add(styles.recentPosts)
         recentPostsSection.append(...recentPosts)
 
+        // Add an event listener so we can intercept default link behaviour and manually route
         recentPostsSection.addEventListener('click', e => {
             handleClick(e)
         })
@@ -120,6 +128,7 @@ const Post = () => {
         return recentPostsSection
     }
 
+    // Get some random posts
     const getRandomPosts = (options = {
 
         postArr: posts,
@@ -133,8 +142,8 @@ const Post = () => {
         const totalPostsInDb = getTotalPostsInDb()
         const postsToRender = []
     
-        // This will always result in a random order, so if shuffle is 'false',
-        // we'll re-order below
+        // Build the list of posts we'll retrieve, this will always result in a
+        // random order, so if shuffle is 'false', we'll re-order afterwards
         do {
             const randomPostId = helper.getRandomBetweenAndIncluding(1, totalPostsInDb)
             if (!postsToRender.includes(randomPostId) && randomPostId != postIdToExclude) postsToRender.push(randomPostId)
@@ -152,32 +161,14 @@ const Post = () => {
         }, [])
     }
 
-    // const getRandomPosts = (posts, qty, excluding, shuffle = false) => {
-    //     const totalPosts = posts.length
-    //     const postsToRender = []
-    
-    //     // This will always result in a random order
-    //     do {
-    //         const random = helper.getRandomBetweenAndIncluding(1, totalPosts)
-    //         if (!postsToRender.includes(random) && random != excluding) postsToRender.push(random)
-    //     } while (postsToRender.length < qty)
-    
-    //     // If shuffle is set to false, we should order the array before retrieving posts, it's easier
-    //     // to sort the IDs in postsToRender than to sort the actual posts in the next step
-    //     shuffle ? helper.shuffleArray(postsToRender) : postsToRender.sort()
-
-    //     // Return a new array containing only the selected qty/order of posts
-    //     return posts.reduce((arr, post) => {
-    //         if (postsToRender.includes(post.id)) arr.push(post)
-    //         console.log(arr.length)
-    //         return arr
-    //     }, [])
-    // }
-
+    // Same as above but much simpler as we just get some posts in the order they
+    // appear in data.js
     const getOrderedPosts = (options = {
+
         postArr: posts,
         qty: posts.length,
         postIdToExclude: null
+
     }) => {
         const { postArr, qty, postIdToExclude } = options
         return postArr.reduce((arr, post) => {
@@ -188,6 +179,10 @@ const Post = () => {
         }, [])
     }
 
+    // Another way to get a single post, but this time we can look it up
+    // by it's path. This is used if the user manually enters a path in the
+    // browser, and also when the popstate changes e.g. if user clicks 'back' and 'forward'
+    // We look up the post by it's path and render that way
     const getPostByPath = path => {
         const postToRender = posts.find(post => post.path === `/${path}`)
         if (postToRender) {
@@ -211,6 +206,7 @@ const Post = () => {
         registerEventListeners()
     }
 
+    // This is how you can get a post by it's ID, after importing posts, you call posts.get(id)
     const get = postId => {
         refresh(postId)
         return node

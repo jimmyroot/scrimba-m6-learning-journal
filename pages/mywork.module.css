@@ -1,4 +1,10 @@
-/* Primary page class */
+/* --------------------------------------------------------------------------------
+Styles for the 'my work' page. This page presents the portfolio data in three different
+layouts depending on screen size. At mobile, it shows image > description, at tablet size
+we show description > image, then at large sizes we show description > image but with 
+every other row reversed
+-------------------------------------------------------------------------------- */
+
 .mywork {
     composes: container from '../css/styles.css';
 
@@ -63,7 +69,7 @@
     padding: 0 2em;
 }
 
-/* Individual project styles */
+/* Individual project styles, default is mobile view (small) */
 .project {
     display: flex;
     flex-direction: column-reverse;
@@ -105,7 +111,7 @@
             }
         }
 
-        .stack {
+        .techStack {
             margin-top: 0.8em;
             align-self: flex-start;
             display: flex;
@@ -183,6 +189,15 @@
         & {
             margin-bottom: 3em;
 
+            /* Reverse every other row, at this size */
+            &:nth-child(even) {
+                flex-direction: row-reverse;
+    
+                .descriptionContainer {
+                    padding: 0 0 0 3em;
+                }
+            }
+            
             .descriptionContainer {
                 display: flex;
                 flex-direction: column;
@@ -193,7 +208,7 @@
                 }
 
                 p:nth-child(4) {
-                    display: inline;
+                    display: block;
                 }
 
                 .subtitle {
@@ -212,13 +227,5 @@
             }            
         }
 
-        /* Flip every other row at the biggest screen size */
-        &:nth-child(even) {
-            flex-direction: row-reverse;
-
-            .descriptionContainer {
-                padding: 0 0 0 3em;
-            }
-        }
     }
 }

@@ -11,6 +11,7 @@ const About = () => {
         })
     }
 
+    // Click handler
     const handleClick = e => {
         const execute = {
             back: () => {

@@ -1,3 +1,8 @@
+/* --------------------------------------------------------------------------------
+I had big plans to make use of this file to store global classes but I didn't end
+ up using it as much as I thought I would. Maybe I'll re-visit in future...
+-------------------------------------------------------------------------------- */
+
 .highlight {
     background-color: var(--primary);
     color: var(--accent-light);
