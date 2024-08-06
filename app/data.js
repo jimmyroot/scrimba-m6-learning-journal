@@ -11,6 +11,8 @@ import imgUrlInvoiceCreator from '../assets/images/invoicecreator.png'
 import imgUrlChoreslist from '../assets/images/choreslist.png'
 import imgUrlBestBank from '../assets/images/bestbank.png'
 import imgUrlUnitConverter from '../assets/images/unitconverter.png'
+import imgUrlColorCult from '../assets/images/colorcult.png'
+import imgUrlReelTime from '../assets/images/reeltime.png'
 
 export const posts = [
     {
@@ -266,6 +268,46 @@ export const posts = [
 ]
 
 export const portfolio = [
+    {
+        title: `Reel Time`,
+        subtitle: `A movie watchlist app. Create your watchlists then search for movies to add
+        using search results from the Open Movie Database. Features persistent data storage
+        courtesy of Firestore DB. Fully responsive.`,
+        description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+        nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+        sunt in culpa qui officia deserunt mollit anim id est laborum.</p>`,
+        stack: [
+            'HTML',
+            'CSS',
+            'JavaScript',
+            'FIRESTORE DB',
+            'FIREBASE AUTH'
+        ],
+        url: 'https://jn-scrimba-m8-reeltime.netlify.app/',
+        imgURL: imgUrlReelTime
+    },
+    {
+        title: `Color Cult`,
+        subtitle: `A colour scheme generator that uses the thecolorapi.com to generate color schemes
+        based off a seed colour specified by the user. Responsive for a consistent experience across desktop,
+        tablet and mobile.`,
+        description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+        nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+        sunt in culpa qui officia deserunt mollit anim id est laborum.</p>`,
+        stack: [
+            'HTML',
+            'CSS',
+            'JavaScript'
+        ],
+        url: 'https://jn-scrimba-m8-colorcult.netlify.app/',
+        imgURL: imgUrlColorCult
+    },
     {
         title: `Learning Journal`,
         subtitle: `A simple, responsive, blog design driven by media queries. Built using a combination

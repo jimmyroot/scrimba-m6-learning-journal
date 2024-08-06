@@ -29,12 +29,12 @@
             }
 
         }
+
         @media (min-width: 640px) {
             & { 
                 margin-bottom: 4em;
     
                 div {
-    
                     h1 {
                         font-size: 3rem;
                     }
@@ -109,11 +109,13 @@
             margin-top: 0.8em;
             align-self: flex-start;
             display: flex;
+            flex-wrap: wrap;
             gap: 0.8em;
 
             div {
                 background-color: var(--accent);
                 color: var(--primary);
+                font-size: .8rem;
                 letter-spacing: .05em;
                 font-weight: 600;
                 text-transform: uppercase;
@@ -156,6 +158,12 @@
                     display: none;
                 }
 
+                .stack {
+                    div {
+                        font-size: .8rem;
+                    }
+                }
+
                 @media (max-width: 700px) {
                     padding-right: .5em;
                 }
@@ -191,12 +199,17 @@
                 .subtitle {
                     font-size: 1.4rem;
                 }
+
+                .stack {
+                    div {
+                        font-size: 1rem;
+                    }
+                }
             }
             
             img {
                 height: 475px;
-            }
-            
+            }            
         }
 
         /* Flip every other row at the biggest screen size */
